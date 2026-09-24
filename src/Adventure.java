@@ -10,7 +10,10 @@ public class Adventure {
         Room r2 = new Room("You are in room 2",
                 "Water drips from the ceiling somewhere in the dark.");
 
+        // Room 1 setters
         r1.setEast(r2);
+
+        // Room 2 setters
         r2.setWest(r1);
 
         currentRoom = r1;
