@@ -94,11 +94,7 @@ public class Adventure {
                         System.out.println("Help!");
                         break;
 
-                    default:
-                        System.out.println("Unknown command");
-                }
 
-                switch (command) {
                     case "go north":
                         if (currentRoom.getNorth() != null) {
                             currentRoom = currentRoom.getNorth();
@@ -141,6 +137,9 @@ public class Adventure {
                             System.out.println("You can't go that way!");
                         }
                         break;
+
+                    default:
+                        System.out.println("Unknown command");
                 }
             }
         }
