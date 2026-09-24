@@ -34,23 +34,39 @@ public class Adventure {
 
         //Room 1 setters
         r1.setEast(r2);
+        r1.setSouth(r4);
 
         //Room 2 setters
         r2.setWest(r1);
+        r2.setEast(r3);
 
         //Room 3 setters
+        r3.setWest(r2);
+        r3.setSouth(r6);
 
         //Room 4 setters
+        r4.setNorth(r1);
+        r4.setSouth(r7);
 
         //Room 5 setters
+        r5.setSouth(r8);
 
         //Room 6 setters
+        r6.setNorth(r3);
+        r6.setSouth(r9);
 
         //Room 7 setters
+        r7.setNorth(r4);
+        r7.setEast(r8);
 
         //Room 8 setters
+        r8.setWest(r7);
+        r8.setNorth(r5);
+        r8.setEast(r9);
 
         //Room 9 setters
+        r9.setWest(r8);
+        r9.setNorth(r6);
 
         currentRoom = r1;
     }
