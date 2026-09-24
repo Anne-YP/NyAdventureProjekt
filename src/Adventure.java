@@ -17,7 +17,7 @@ public class Adventure {
                 "There is a orc standing in front of you. What do you do?");
 
         Room r6 = new Room("you are in room 6",
-                "There is a bridge crossing a black lake.")
+                "There is a bridge crossing a black lake.");
 
         Room r5 = new Room("You are in room 5",
                 "THIS IS A SPECIAL ROOM");
