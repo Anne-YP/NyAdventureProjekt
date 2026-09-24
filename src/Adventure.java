@@ -97,6 +97,51 @@ public class Adventure {
                     default:
                         System.out.println("Unknown command");
                 }
+
+                switch (command) {
+                    case "go north":
+                        if (currentRoom.getNorth() != null) {
+                            currentRoom = currentRoom.getNorth();
+
+                            System.out.println(currentRoom.getName());
+                            System.out.println(currentRoom.getDescription());
+                        } else {
+                            System.out.println("You can't go that way!");
+                        }
+                        break;
+
+                    case "go south":
+                        if (currentRoom.getSouth() != null) {
+                            currentRoom = currentRoom.getSouth();
+
+                            System.out.println(currentRoom.getName());
+                            System.out.println(currentRoom.getDescription());
+                        } else {
+                            System.out.println("You can't go that way!");
+                        }
+                        break;
+
+                    case "go east":
+                        if (currentRoom.getEast() != null) {
+                            currentRoom = currentRoom.getEast();
+
+                            System.out.println(currentRoom.getName());
+                            System.out.println(currentRoom.getDescription());
+                        } else {
+                            System.out.println("You can't go that way!");
+                        }
+                        break;
+                    case "go west":
+                        if (currentRoom.getWest() != null) {
+                            currentRoom = currentRoom.getWest();
+
+                            System.out.println(currentRoom.getName());
+                            System.out.println(currentRoom.getDescription());
+                        } else {
+                            System.out.println("You can't go that way!");
+                        }
+                        break;
+                }
             }
         }
     }
