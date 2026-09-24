@@ -10,7 +10,7 @@ public class Adventure {
         Room r2 = new Room("You are in room 2",
                 "Water drips from the ceiling somewhere in the dark.");
 
-        Room r3 = new Room("You are in Roomn 3",
+        Room r3 = new Room("You are in room 3",
                 "There is a tree growing in a ray of light. A sword is hanging from one of its branches.");
 
         // Room 1 setters
