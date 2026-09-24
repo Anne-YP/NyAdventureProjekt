@@ -28,6 +28,9 @@ public class Adventure {
         Room r8 = new Room("You are in room 8",
                 "There is a mythical creature offering you food.");
 
+        Room r9 = new Room("You are in room 9",
+                "A rusty key is kept in a glass jar. Do you want to collect it?");
+
 
         //Room 1 setters
         r1.setEast(r2);
