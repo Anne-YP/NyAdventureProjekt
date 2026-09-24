@@ -16,11 +16,27 @@ public class Adventure {
         Room r4 = new Room("You are in room 4",
                 "There is a orc standing in front of you. What do you do?")
 
-        // Room 1 setters
+        Room r5 = new Room("You are in room 5",
+                "THIS IS A SPECIAL ROOM");
+        //Room 1 setters
         r1.setEast(r2);
 
-        // Room 2 setters
+        //Room 2 setters
         r2.setWest(r1);
+
+        //Room 3 setters
+
+        //Room 4 setters
+
+        //Room 5 setters
+
+        //Room 6 setters
+
+        //Room 7 setters
+
+        //Room 8 setters
+
+        //Room 9 setters
 
         currentRoom = r1;
     }
