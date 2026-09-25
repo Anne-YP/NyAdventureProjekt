@@ -1,7 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
 public class Adventure {
-    private Room currentRoom;
 
     public Adventure() {
         Room r1 = new Room("You are in room 1",
@@ -30,6 +29,7 @@ public class Adventure {
 
         Room r9 = new Room("You are in room 9",
                 "A rusty key is kept in a glass jar. Do you want to collect it?");
+
 
         //Room 1 setters
         r1.setEast(r2);
@@ -66,10 +66,10 @@ public class Adventure {
         //Room 9 setters
         r9.setWest(r8);
         r9.setNorth(r6);
+    }
+}
 
-        currentRoom = r1;
-
-        // Skal også lave setters med Wrong direction til hvert rum? Så fx r1.setNorth(null)
+      /*  currentRoom = r1;
     }
 
         public void play () {
@@ -128,7 +128,6 @@ public class Adventure {
                             System.out.println("You can't go that way!");
                         }
                         break;
-
                     case "go west":
                         if (currentRoom.getWest() != null) {
                             currentRoom = currentRoom.getWest();
@@ -143,7 +142,8 @@ public class Adventure {
                     default:
                         System.out.println("Unknown command");
                 }
-                
             }
         }
     }
+
+       */
