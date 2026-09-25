@@ -31,7 +31,6 @@ public class Adventure {
         Room r9 = new Room("You are in room 9",
                 "A rusty key is kept in a glass jar. Do you want to collect it?");
 
-
         //Room 1 setters
         r1.setEast(r2);
         r1.setSouth(r4);
@@ -69,6 +68,8 @@ public class Adventure {
         r9.setNorth(r6);
 
         currentRoom = r1;
+
+        // Skal også lave setters med Wrong direction til hvert rum? Så fx r1.setNorth(null)
     }
 
         public void play () {
@@ -127,6 +128,7 @@ public class Adventure {
                             System.out.println("You can't go that way!");
                         }
                         break;
+
                     case "go west":
                         if (currentRoom.getWest() != null) {
                             currentRoom = currentRoom.getWest();
@@ -141,6 +143,7 @@ public class Adventure {
                     default:
                         System.out.println("Unknown command");
                 }
+                
             }
         }
     }

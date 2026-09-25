@@ -7,19 +7,18 @@ public class Room {
     private Room east;
     private Room west;
 
+    //Constructor
     public Room (String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
     public String getDescription(){
         return description;
     }
 
-    // Getters til nord, syd, øst og vest
+    // Getters til nord, syd, øst og vest --> Kan ændres til en switch?
     public Room getNorth() {
         return north;
     }

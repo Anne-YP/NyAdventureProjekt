@@ -5,6 +5,7 @@ public class Main {
 
         Adventure adventure = new Adventure();
         adventure.play(); // Start/Slut spillet
+
     }
 
 }
