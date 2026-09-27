@@ -1,8 +1,18 @@
+import java.util.Scanner;
+
 public class UserInterface {
-}
-// Class for communication between player and game
+    // Class for communication between player and game
 // Commands start, exit, look, help and inputs
-// Fix currentRoom issues
+
+    private Scanner scanner;
+
+    // public UserInterface()
+
+   // public String getCommand()
+
+    // public void showMessage(String message)
+}
+
 /*
 public void play () {
     Scanner scanner = new Scanner(System.in);
