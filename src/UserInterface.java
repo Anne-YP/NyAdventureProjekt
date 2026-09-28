@@ -23,7 +23,7 @@ public void play () {
     while (isPlaying) {
 
      System.out.print("> ");
-        String command = scanner.nextLine().toLowerCase();
+        String command = scanner.nextLine().trim().toLowerCase();
         switch (command) {
             case "look":
                 System.out.println(currentRoom.getName());
