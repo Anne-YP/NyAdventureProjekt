@@ -26,10 +26,11 @@ public class Map {
                 "There is an empty water container lying on the floor.");
 
         Room r8 = new Room("You are in room 8",
-                "There is a mythical creature offering you bread.");
+                "A rusty key is kept in a glass jar. Do you want to collect it?");
 
         Room r9 = new Room("You are in room 9",
-                "A rusty key is kept in a glass jar. Do you want to collect it?");
+                "There is a mythical creature offering you bread.");
+
 
 // create items
         Item key = new Item("A key", "A rusty key in a glass jar");
@@ -40,9 +41,25 @@ public class Map {
         Item gold = new Item("Gold", "A treasure chest filled with gold");
         Item food = new Item("Food", "A loaf of bread");
         Item book = new Item("A book", "A book: 'How to defeat a dragon'");
+        Item container = new Item("A container", "A water container");
 
         // assign items to rooms
         r2.addItem(lamp);
+        r2.addItem(book);
+
+        r3.addItem(sword);
+
+        r4.addItem(arrows);
+
+        r5.addItem(gold);
+
+        r6.addItem(archbow);
+
+        r7.addItem(container);
+
+        r8.addItem(key);
+
+        r9.addItem(food);
 
         // set directions for rooms
         r1.setEast(r2);
