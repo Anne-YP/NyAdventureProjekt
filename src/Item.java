@@ -14,6 +14,10 @@ public class Item {
         return longName;
     }
 
+    @Override
+    public String toString() {
+        return longName;
+    }
 
 
 }

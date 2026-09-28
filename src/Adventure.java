@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 public class Adventure {
@@ -22,8 +23,15 @@ public class Adventure {
             String command = ui.getCommand();
             switch (command) {
                 case "look":
-                    ui.showMessage(player.getCurrentRoom().getName());
-                    ui.showMessage(player.getCurrentRoom().getDescription());
+                    Room currentRoom = player.getCurrentRoom();
+                    ui.showMessage(currentRoom.getName());
+                    ui.showMessage(currentRoom.getDescription());
+
+                    ArrayList<Item> items = currentRoom.getItems();
+
+                    for(Item item: items) {
+                        ui.showMessage(item.toString());
+                    }
                     break;
 
                 case "exit":
