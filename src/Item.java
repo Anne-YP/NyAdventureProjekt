@@ -6,7 +6,7 @@ public class Item {
     public Item(String shortName, String longName) {
         Item key = new Item("Key", "A rusty key in a glass jar");
         Item sword = new Item("Sword", "A long sword");
-        Item lamp = new Item("Lamp", "An ancient oil ");
+        Item lamp = new Item("Lamp", "An ancient oil lamp");
         Item archbow = new Item("archbow", "long name");
         Item arrows = new Item("Arrows", "A case with five arrows");
     }
