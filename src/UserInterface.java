@@ -14,21 +14,23 @@ public class UserInterface {
         scanner = new Scanner(System.in);
     }
 
-    public String getCommand(){
-        return scanner.nextLine().toLowerCase();
+    public String getCommand() {
+        String command = scanner.nextLine().trim().toLowerCase();
+        return translateDirection(command);
     }
 
     public void showMessage(String message) {
         System.out.println(message);
     }
+
+
+    private String translateDirection(String command) {
+        return switch (command) {
+            case "go north", "n", "north" -> "north";
+            case "go south", "s", "south" -> "south";
+            case "go east", "e", "east" -> "east";
+            case "go west", "w", "west" -> "west";
+            default -> command;
+        };
+    }
 }
-
-
-/*
-private String translateDirection(String command) {
-    return switch (command) {
-    case "go north", "n", "north" --> "go north"
-    case "go south", "s", "south" --> "go south"
-    case "go east", "e", "east" --> "go east"
-    case "go west", "w", "west" --> "go west
- */
