@@ -1,7 +1,7 @@
 public class Map {
     // Create Map for Rooms
     private Room startingRoom;
-//
+    //
     public Map() {
         Room r1 = new Room("You are in room 1",
                 "A room with no distinct features, except two doors.");
