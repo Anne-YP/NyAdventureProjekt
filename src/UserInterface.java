@@ -16,6 +16,7 @@ public class UserInterface {
 
     public String getCommand() {
         String command = scanner.nextLine().trim().toLowerCase();
+
         return translateDirection(command);
     }
 

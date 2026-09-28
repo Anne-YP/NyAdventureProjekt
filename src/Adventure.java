@@ -6,7 +6,7 @@ public class Adventure {
     private UserInterface ui;
 
     public Adventure() {
-        Map map = new Map();
+        map = new Map();
         player = new Player(map.getStartingRoom());
         ui = new UserInterface();
     }
@@ -36,7 +36,7 @@ public class Adventure {
                         break;
 
 
-                    case "go north":
+                    case "north":
                         if (player.move("north")) {
                             ui.showMessage(player.getCurrentRoom().getName());
                             ui.showMessage(player.getCurrentRoom().getDescription());
@@ -45,7 +45,7 @@ public class Adventure {
                         }
                         break;
 
-                    case "go south":
+                    case "south":
                         if (player.move("south")) {
                             ui.showMessage(player.getCurrentRoom().getName());
                             ui.showMessage(player.getCurrentRoom().getDescription());
@@ -54,15 +54,15 @@ public class Adventure {
                         }
                         break;
 
-                    case "go east":
-                        if (player.move("(east")) {
+                    case "east":
+                        if (player.move("east")) {
                             ui.showMessage(player.getCurrentRoom().getName());
                            ui.showMessage(player.getCurrentRoom().getDescription());
                         } else {
                             ui.showMessage("You can't go that way!");
                         }
                         break;
-                    case "go west":
+                    case "west":
                         if (player.move("west")) {
                             ui.showMessage(player.getCurrentRoom().getName());
                             ui.showMessage(player.getCurrentRoom().getDescription());
