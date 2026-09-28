@@ -4,15 +4,19 @@ public class UserInterface {
     // Class for communication between player and game
 // Commands start, exit, look, help and inputs
 
-    private Scanner scanner = new Scanner(System.in);;
+    private Scanner scanner;
 
-    // public UserInterface()
+    public UserInterface() {
+        scanner = new Scanner(System.in);
+    }
 
     public String getCommand(){
         return scanner.nextLine().toLowerCase();
     }
 
-    // public void showMessage(String message)
+    public void showMessage(String message) {
+        System.out.println(message);
+    }
 }
 
 /*

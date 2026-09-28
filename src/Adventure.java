@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Adventure {
     private Player player;
     private Map map;
+    private UserInterface ui;
 
     public Adventure() {
         Map map = new Map();
         player = new Player(map.getStartingRoom());
+        ui = new UserInterface();
     }
 }
 
