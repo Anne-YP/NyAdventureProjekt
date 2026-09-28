@@ -7,8 +7,7 @@ public class Item {
         Item key = new Item("Key", "A rusty key in a glass jar");
         Item sword = new Item("Sword", "A long sword");
         Item lamp = new Item("Lamp", "An ancient oil ");
-        Item archbow = new Item("Archbow", "long name");
+        Item archbow = new Item("archbow", "long name");
         Item arrows = new Item("Arrows", "A case with five arrows");
-
     }
 }

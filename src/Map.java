@@ -25,7 +25,7 @@ public class Map {
                 "There is an empty water container lying on the floor.");
 
         Room r8 = new Room("You are in room 8",
-                "There is a mythical creature offering you food.");
+                "There is a mythical creature offering you bread.");
 
         Room r9 = new Room("You are in room 9",
                 "A rusty key is kept in a glass jar. Do you want to collect it?");

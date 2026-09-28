@@ -10,8 +10,7 @@ public class Room {
     private Room west;
 
     private ArrayList<Item> items;
-    Item key = new Item;
-    Item sword = new Item;
+
 
     public Room (String name, String description) {
         this.name = name;
