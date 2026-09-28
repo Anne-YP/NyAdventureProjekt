@@ -10,11 +10,10 @@ public class Adventure {
         player = new Player(map.getStartingRoom());
         ui = new UserInterface();
     }
-}
+    public void play() {
+        Scanner scanner = new Scanner(System.in);
 
-      /*
-        public void play () {
-            Scanner scanner = new Scanner(System.in);
+        player.getCurrentRoom()
 
             boolean isPlaying = true;
             while (isPlaying) {
@@ -23,8 +22,8 @@ public class Adventure {
                 String command = scanner.nextLine().toLowerCase();
                 switch (command) {
                     case "look":
-                        System.out.println(currentRoom.getName());
-                        System.out.println(currentRoom.getDescription());
+                        System.out.println(player.getCurrentRoom().getName());
+                        System.out.println(player.getCurrentRoom().getDescription());
                         break;
 
                     case "exit":
@@ -38,43 +37,35 @@ public class Adventure {
 
 
                     case "go north":
-                        if (currentRoom.getNorth() != null) {
-                            currentRoom = currentRoom.getNorth();
-
-                            System.out.println(currentRoom.getName());
-                            System.out.println(currentRoom.getDescription());
+                        if (player.move("north")) {
+                            System.out.println(player.getCurrentRoom().getName());
+                            System.out.println(player.getCurrentRoom().getDescription());
                         } else {
                             System.out.println("You can't go that way!");
                         }
                         break;
 
                     case "go south":
-                        if (currentRoom.getSouth() != null) {
-                            currentRoom = currentRoom.getSouth();
-
-                            System.out.println(currentRoom.getName());
-                            System.out.println(currentRoom.getDescription());
+                        if (player.move("south")) {
+                            System.out.println(player.getCurrentRoom().getName());
+                            System.out.println(player.getCurrentRoom().getDescription());
                         } else {
                             System.out.println("You can't go that way!");
                         }
                         break;
 
                     case "go east":
-                        if (currentRoom.getEast() != null) {
-                            currentRoom = currentRoom.getEast();
-
-                            System.out.println(currentRoom.getName());
-                            System.out.println(currentRoom.getDescription());
+                        if (player.move("(east")) {
+                            System.out.println(player.getCurrentRoom().getName());
+                            System.out.println(player.getCurrentRoom().getDescription());
                         } else {
                             System.out.println("You can't go that way!");
                         }
                         break;
                     case "go west":
-                        if (currentRoom.getWest() != null) {
-                            currentRoom = currentRoom.getWest();
-
-                            System.out.println(currentRoom.getName());
-                            System.out.println(currentRoom.getDescription());
+                        if (player.move("west")) {
+                            System.out.println(player.getCurrentRoom().getName());
+                            System.out.println(player.getCurrentRoom().getDescription());
                         } else {
                             System.out.println("You can't go that way!");
                         }
@@ -82,9 +73,11 @@ public class Adventure {
 
                     default:
                         System.out.println("Unknown command");
+
+
                 }
             }
         }
     }
 
-       */
+
