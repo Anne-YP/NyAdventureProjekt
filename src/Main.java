@@ -5,6 +5,7 @@ public class Main {
         // UserInterface userInterface = new UserInterface(adventure);
         // userInterface.start();
         // }
+        //
 
         System.out.println("Welcome!");
         System.out.println("You are trapped in a labyrinth and you need to find your way out. To grasp your whereabouts type in 'look'");

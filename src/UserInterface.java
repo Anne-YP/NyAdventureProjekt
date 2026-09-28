@@ -22,7 +22,7 @@ public class UserInterface {
     public void showMessage(String message) {
         System.out.println(message);
     }
-
+//
 
     private String translateDirection(String command) {
         return switch (command) {

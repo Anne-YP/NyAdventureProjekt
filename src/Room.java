@@ -1,7 +1,7 @@
 public class Room {
     private String name;
     private String description;
-
+//
     private Room north;
     private Room south;
     private Room east;
