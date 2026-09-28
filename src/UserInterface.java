@@ -15,7 +15,7 @@ public class UserInterface {
     // public void showMessage(String message)
 }
 
-/*
+
 public void play () {
     Scanner scanner = new Scanner(System.in);
 
@@ -88,7 +88,6 @@ public void play () {
         }
     }
 }
- */
 
 /*
 private String translateDirection(String command) {
