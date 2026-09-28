@@ -6,6 +6,10 @@ public class UserInterface {
 
     private Scanner scanner;
 
+    public void showPrompt() {
+        System.out.println("> ");
+    }
+
     public UserInterface() {
         scanner = new Scanner(System.in);
     }

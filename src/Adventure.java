@@ -11,68 +11,67 @@ public class Adventure {
         ui = new UserInterface();
     }
     public void play() {
-        Scanner scanner = new Scanner(System.in);
 
-        player.getCurrentRoom()
+        player.getCurrentRoom();
 
             boolean isPlaying = true;
             while (isPlaying) {
 
-                System.out.print("> ");
-                String command = scanner.nextLine().toLowerCase();
+                ui.showPrompt();
+                String command = ui.getCommand();
                 switch (command) {
                     case "look":
-                        System.out.println(player.getCurrentRoom().getName());
-                        System.out.println(player.getCurrentRoom().getDescription());
+                        ui.showMessage(player.getCurrentRoom().getName());
+                        ui.showMessage(player.getCurrentRoom().getDescription());
                         break;
 
                     case "exit":
                         isPlaying = false;
-                        System.out.println("Goodbye!");
+                        ui.showMessage("Goodbye!");
                         break;
 
                     case "help":
-                        System.out.println("Help!");
+                        ui.showMessage("Help!");
                         break;
 
 
                     case "go north":
                         if (player.move("north")) {
-                            System.out.println(player.getCurrentRoom().getName());
-                            System.out.println(player.getCurrentRoom().getDescription());
+                            ui.showMessage(player.getCurrentRoom().getName());
+                            ui.showMessage(player.getCurrentRoom().getDescription());
                         } else {
-                            System.out.println("You can't go that way!");
+                            ui.showMessage("You can't go that way!");
                         }
                         break;
 
                     case "go south":
                         if (player.move("south")) {
-                            System.out.println(player.getCurrentRoom().getName());
-                            System.out.println(player.getCurrentRoom().getDescription());
+                            ui.showMessage(player.getCurrentRoom().getName());
+                            ui.showMessage(player.getCurrentRoom().getDescription());
                         } else {
-                            System.out.println("You can't go that way!");
+                            ui.showMessage("You can't go that way!");
                         }
                         break;
 
                     case "go east":
                         if (player.move("(east")) {
-                            System.out.println(player.getCurrentRoom().getName());
-                            System.out.println(player.getCurrentRoom().getDescription());
+                            ui.showMessage(player.getCurrentRoom().getName());
+                           ui.showMessage(player.getCurrentRoom().getDescription());
                         } else {
-                            System.out.println("You can't go that way!");
+                            ui.showMessage("You can't go that way!");
                         }
                         break;
                     case "go west":
                         if (player.move("west")) {
-                            System.out.println(player.getCurrentRoom().getName());
-                            System.out.println(player.getCurrentRoom().getDescription());
+                            ui.showMessage(player.getCurrentRoom().getName());
+                            ui.showMessage(player.getCurrentRoom().getDescription());
                         } else {
-                            System.out.println("You can't go that way!");
+                            ui.showMessage("You can't go that way!");
                         }
                         break;
 
                     default:
-                        System.out.println("Unknown command");
+                        ui.showMessage("Unknown command");
 
 
                 }
