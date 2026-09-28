@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Room {
     private String name;
     private String description;
-//
+
     private Room north;
     private Room south;
     private Room east;
@@ -15,6 +15,20 @@ public class Room {
     public Room (String name, String description) {
         this.name = name;
         this.description = description;
+
+        items = new ArrayList<>();
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
     public String getName() {

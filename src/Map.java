@@ -3,6 +3,7 @@ public class Map {
     private Room startingRoom;
     //
     public Map() {
+        // create rooms
         Room r1 = new Room("You are in room 1",
                 "A room with no distinct features, except two doors.");
 
@@ -30,6 +31,20 @@ public class Map {
         Room r9 = new Room("You are in room 9",
                 "A rusty key is kept in a glass jar. Do you want to collect it?");
 
+// create items
+        Item key = new Item("A key", "A rusty key in a glass jar");
+        Item sword = new Item("A sword", "A long sword");
+        Item lamp = new Item("A lamp", "An ancient oil lamp");
+        Item archbow = new Item("An archbow", "long name");
+        Item arrows = new Item("Arrows", "A case with five arrows");
+        Item gold = new Item("Gold", "A treasure chest filled with gold");
+        Item food = new Item("Food", "A loaf of bread");
+        Item book = new Item("A book", "A book: 'How to defeat a dragon'");
+
+        // assign items to rooms
+        r2.addItem(lamp);
+
+        // set directions for rooms
         r1.setEast(r2);
         r1.setSouth(r4);
 
