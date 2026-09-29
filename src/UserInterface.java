@@ -1,12 +1,9 @@
 import java.util.Scanner;
 
 public class UserInterface {
-    // Class for communication between player and game
-// Commands start, exit, look, help and inputs
 
     private Scanner scanner;
     private Adventure adventure;
-
 
     public void showPrompt() {
         System.out.print("> ");

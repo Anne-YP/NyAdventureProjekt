@@ -11,7 +11,7 @@ public class Adventure {
         player = new Player(map.getStartingRoom());
         ui = new UserInterface();
     }
-    //
+
     public void play() {
 
         player.getCurrentRoom();
@@ -89,7 +89,7 @@ public class Adventure {
                     ui.showMessage("Help!");
                     break;
 
-
+                // Check refactor possibility of .getCurrentRoom() in move-command
                 case "north":
                     if (player.move("north")) {
                         ui.showMessage(player.getCurrentRoom().getName());
