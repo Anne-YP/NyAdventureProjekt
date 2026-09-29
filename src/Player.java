@@ -3,9 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
     private Room currentRoom;
-
     private ArrayList<Item> inventory;
-
 
     public Player(Room startingRoom) {
         this.currentRoom = startingRoom;
@@ -39,7 +37,6 @@ public class Player {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
-
     public void addItem(Item item) {
         inventory.add(item);
     }
