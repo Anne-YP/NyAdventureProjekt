@@ -5,6 +5,8 @@ public class UserInterface {
 // Commands start, exit, look, help and inputs
 
     private Scanner scanner;
+    private Adventure adventure;
+
 
     public void showPrompt() {
         System.out.print("> ");
@@ -12,6 +14,8 @@ public class UserInterface {
 
     public UserInterface() {
         scanner = new Scanner(System.in);
+        adventure = new Adventure();
+
     }
 
     public String getCommand() {
