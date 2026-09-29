@@ -29,6 +29,7 @@ public class Adventure {
 
                     ArrayList<Item> items = currentRoom.getItems();
 
+                    System.out.println("Items in this room: ");
                     for(Item item: items) {
                         ui.showMessage(item.toString());
                     }

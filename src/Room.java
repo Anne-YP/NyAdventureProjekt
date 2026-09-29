@@ -11,7 +11,6 @@ public class Room {
 
     private ArrayList<Item> items;
 
-
     public Room (String name, String description) {
         this.name = name;
         this.description = description;

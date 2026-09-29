@@ -7,7 +7,7 @@ public class UserInterface {
     private Scanner scanner;
 
     public void showPrompt() {
-        System.out.println("> ");
+        System.out.print("> ");
     }
 
     public UserInterface() {
