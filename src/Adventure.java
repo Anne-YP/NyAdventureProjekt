@@ -26,10 +26,6 @@ public class Adventure {
                 String itemName = command.substring(5);
 
                 ui.showMessage("Searching for: [" + itemName + "]");
-
-                for(Item i: player.getCurrentRoom().getItems()) {
-                    ui.showMessage("Room contains: [" + i.getShortName() + "]");
-                }
                 Item item = player.getCurrentRoom().findItem(itemName);
 
                 if(item != null) {
