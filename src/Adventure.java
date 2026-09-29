@@ -21,6 +21,19 @@ public class Adventure {
 
             ui.showPrompt();
             String command = ui.getCommand();
+
+            if(command.startsWith("take ")) {
+                String itemName = command.substring(5);
+
+                Item item = player.getCurrentRoom().findItem(itemName);
+
+                if(item != null) {
+                    ui.showMessage(item.getLongName());
+                }
+
+            }
+
+
             switch (command) {
 
                 case "look":
