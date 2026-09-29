@@ -30,9 +30,14 @@ public class Adventure {
 
                     ArrayList<Item> items = currentRoom.getItems();
 
-                    System.out.println("Items in this room: ");
-                    for(Item item: items) {
-                        ui.showMessage(item.toString());
+                    if (player.getCurrentRoom().getItems().isEmpty()) {
+                    ui.showMessage("There are no items here.");
+                    }
+                    else {
+                    ui.showMessage("Items in this room:");
+                    for (Item item : player.getCurrentRoom().getItems()) {
+                    ui.showMessage("- " + item.getLongName());
+                    }
                     }
                     break;
 
