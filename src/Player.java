@@ -46,5 +46,14 @@ public class Player {
     public void removeItem(Item item) {
         inventory.remove(item);
     }
+
+    public Item findItem(String shortName) {
+        for(Item item: inventory) {
+            if(item.getShortName().equalsIgnoreCase(shortName)) {
+                return item;
+            }
+        }
+        return null;
+    }
 }
 

@@ -44,7 +44,21 @@ public class Adventure {
                 continue;
 
             }
+            if(command.startsWith("drop ")) {
+                String itemName = command.substring(5);
 
+                Item item = player.findItem(itemName);
+
+                if (item != null) {
+                    player.removeItem(item);
+                    player.getCurrentRoom().addItem(item);
+
+                    ui.showMessage("You dropped " + item.getLongName());
+                } else {
+                    ui.showMessage("You don't have anything like " + itemName + " in your inventory.");
+                }
+                continue;
+            }
 
             switch (command) {
 
