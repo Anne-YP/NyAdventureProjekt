@@ -94,5 +94,6 @@ public class Map {
 
     public Room getStartingRoom() {
         return startingRoom;
+
     }
 }

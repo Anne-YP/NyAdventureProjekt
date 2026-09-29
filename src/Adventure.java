@@ -38,7 +38,7 @@ public class Adventure {
                     for (Item item : player.getCurrentRoom().getItems()) {
                     ui.showMessage("- " + item.getLongName());
                     }
-                    }
+                        }
                     break;
 
                 case "exit":
@@ -83,6 +83,19 @@ public class Adventure {
                         ui.showMessage(player.getCurrentRoom().getDescription());
                     } else {
                         ui.showMessage("You can't go that way!");
+                    }
+                    break;
+
+                case "inventory":
+                    if(player.getInventory().isEmpty()) {
+                        ui.showMessage("Your inventory is empty.");
+                    }
+                    else {
+                        ui.showMessage("You are carrying:");
+
+                        for(Item item: player.getInventory()) {
+                            ui.showMessage("- " + item.getLongName());
+                        }
                     }
                     break;
 

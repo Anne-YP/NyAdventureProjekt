@@ -30,6 +30,15 @@ public class Room {
         return items;
     }
 
+    public Item findItem(String shortName) {
+        for(Item item: items) {
+            if(item.getShortName().equalsIgnoreCase(shortName)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public String getName() {
         return name;
     }
