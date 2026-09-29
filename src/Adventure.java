@@ -25,11 +25,23 @@ public class Adventure {
             if(command.startsWith("take ")) {
                 String itemName = command.substring(5);
 
+                ui.showMessage("Searching for: [" + itemName + "]");
+
+                for(Item i: player.getCurrentRoom().getItems()) {
+                    ui.showMessage("Room contains: [" + i.getShortName() + "]");
+                }
                 Item item = player.getCurrentRoom().findItem(itemName);
 
                 if(item != null) {
-                    ui.showMessage(item.getLongName());
+                    player.getCurrentRoom().removeItem(item);
+                    player.addItem(item);
+
+                    ui.showMessage("Yoy picked up " + item.getLongName());
                 }
+                else {
+                    ui.showMessage("There is nothing like " +itemName + " to take around here.");
+                }
+                continue;
 
             }
 
