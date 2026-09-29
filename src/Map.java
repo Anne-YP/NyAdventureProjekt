@@ -33,15 +33,15 @@ public class Map {
 
 
 // create items
-        Item key = new Item("A key", "A rusty key in a glass jar");
-        Item sword = new Item("A sword", "A long sword");
-        Item lamp = new Item("A lamp", "An ancient oil lamp");
-        Item archbow = new Item("An archbow", "long name");
-        Item arrows = new Item("Arrows", "A case with five arrows");
-        Item gold = new Item("Gold", "A treasure chest filled with gold");
-        Item food = new Item("Food", "A loaf of bread");
-        Item book = new Item("A book", "A book: 'How to defeat a dragon'");
-        Item container = new Item("A container", "A water container");
+        Item key = new Item("key", "A rusty key in a glass jar");
+        Item sword = new Item("sword", "A long sword");
+        Item lamp = new Item("lamp", "An ancient oil lamp");
+        Item archbow = new Item("archbow", "long name");
+        Item arrows = new Item("arrows", "A case with five arrows");
+        Item gold = new Item("gold", "A treasure chest filled with gold");
+        Item food = new Item("food", "A loaf of bread");
+        Item book = new Item("book", "A book: 'How to defeat a dragon'");
+        Item container = new Item("container", "A water container");
 
         // assign items to rooms
         r2.addItem(lamp);

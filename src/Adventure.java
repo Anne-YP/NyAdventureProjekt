@@ -36,7 +36,7 @@ public class Adventure {
                     player.getCurrentRoom().removeItem(item);
                     player.addItem(item);
 
-                    ui.showMessage("Yoy picked up " + item.getLongName());
+                    ui.showMessage("You picked up " + item.getLongName());
                 }
                 else {
                     ui.showMessage("There is nothing like " +itemName + " to take around here.");
