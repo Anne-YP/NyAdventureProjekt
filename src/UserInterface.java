@@ -12,8 +12,6 @@ public class UserInterface {
 
     public UserInterface() {
         scanner = new Scanner(System.in);
-        adventure = new Adventure();
-
     }
 
     public String getCommand() {
