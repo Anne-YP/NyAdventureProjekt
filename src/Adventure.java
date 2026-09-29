@@ -22,6 +22,7 @@ public class Adventure {
             ui.showPrompt();
             String command = ui.getCommand();
             switch (command) {
+
                 case "look":
                     Room currentRoom = player.getCurrentRoom();
                     ui.showMessage(currentRoom.getName());
