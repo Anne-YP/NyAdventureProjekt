@@ -5,6 +5,7 @@ public class UserInterface {
     private Scanner scanner;
     private Adventure adventure;
 
+
     public void showPrompt() {
         System.out.print("> ");
     }
