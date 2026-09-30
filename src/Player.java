@@ -75,5 +75,9 @@ public class Player {
         }
         return "you should be dead";
     }
+
+    public void changeHealth(int amount) {
+        health += amount;
+    }
 }
 

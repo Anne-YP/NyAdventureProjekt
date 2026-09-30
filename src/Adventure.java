@@ -67,8 +67,19 @@ public class Adventure {
                 if(item == null) {
                     item = player.getCurrentRoom().findItem(itemName);
                 }
+
+                if(item == null) {
+                    ui.showMessage("There is nothing like " + itemName + " to eat around here.");
+
+                    continue;
+                }
+
                if(item instanceof Consumable) {
-                    ui.showMessage("You can eat the " + item.getShortName());
+                   Consumable consumable = (Consumable) item;
+
+                   player.changeHealth(consumable.getHealthPoints());
+
+                    ui.showMessage("You ate the " + item.getShortName());
                 }
                 else {
                     ui.showMessage("You can't eat the " + item.getShortName());
@@ -162,7 +173,7 @@ public class Adventure {
 
                 case "health":
                     ui.showMessage("Health: " + player.getHealth() +
-                            "- " + player.getHealthdescription());
+                            " - " + player.getHealthdescription());
                     break;
 
                 default:
