@@ -67,6 +67,7 @@ public class Map {
         r7.addItem(container);
 
         r8.addItem(key);
+        r8.addItem(mushroom);
 
       //  r9.addItem(food);
         r9.addItem(bread);
