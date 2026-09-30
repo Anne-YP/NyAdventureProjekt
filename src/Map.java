@@ -28,13 +28,14 @@ public class Map {
                 "There is an empty water container lying on the floor.");
 
         Room r8 = new Room("You are in room 8",
-                "A rusty key is kept in a glass jar. Do you want to collect it?");
+                "A rusty key is kept inside a pale glowing mushroom.\n" +
+                        "Eat the mushroom to access the key.");
 
         Room r9 = new Room("You are in room 9",
                 "There is a mythical creature offering you bread.");
 
 // Create items
-        Item key = new Item("key", "A rusty key in a glass jar");
+        Item key = new Item("key", "A rusty key inside a pale glowing mushroom");
         Item sword = new Item("sword", "A long sword");
         Item lamp = new Item("lamp", "An ancient oil lamp");
         Item archbow = new Item("archbow", "A golden bejewelled archbow");
