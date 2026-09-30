@@ -35,10 +35,10 @@ public class Map {
         Item key = new Item("key", "A rusty key in a glass jar");
         Item sword = new Item("sword", "A long sword");
         Item lamp = new Item("lamp", "An ancient oil lamp");
-        Item archbow = new Item("archbow", "long name");
+        Item archbow = new Item("archbow", "A golden bejewelled archbow");
         Item arrows = new Item("arrows", "A case with five arrows");
         Item gold = new Item("gold", "A treasure chest filled with gold");
-        Item food = new Item("food", "A loaf of bread");
+       // Item food = new Item("food", "A loaf of bread");
         Item book = new Item("book", "A book: 'How to defeat a dragon'");
         Item container = new Item("container", "A water container");
 
@@ -62,7 +62,7 @@ public class Map {
 
         r8.addItem(key);
 
-        r9.addItem(food);
+      //  r9.addItem(food);
         r9.addItem(bread);
 
         // set directions for rooms

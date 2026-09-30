@@ -82,7 +82,11 @@ public class Adventure {
                     break;
 
                 case "help":
-                    ui.showMessage("Help!");
+                    ui.showMessage("You are trapped in a labyrinth and you need to find your way out.\n" +
+                            "Type in 'look' to look around the room\n" +
+                            "To move type either 'go north', 'go south', 'go east' or 'go west'\n" +
+                            "To pick up an item type 'take *name of item*'\n" +
+                            "To drop an item type 'drop *name of item*'");
                     break;
 
                 // Check refactor possibility of .getCurrentRoom() in move-command
