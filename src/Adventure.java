@@ -50,9 +50,30 @@ public class Adventure {
                     player.getCurrentRoom().addItem(item);
 
                     ui.showMessage("You dropped " + item.getLongName());
-                } else {
+                }
+                else {
                     ui.showMessage("You don't have anything like " + itemName + " in your inventory.");
                 }
+                continue;
+            }
+
+            if(command.startsWith("eat ")) {
+                String itemName = command.substring(4);
+
+                ui.showMessage("Trying to eat: " + itemName);
+
+                Item item = player.findItem(itemName);
+
+                if(item == null) {
+                    item = player.getCurrentRoom().findItem(itemName);
+                }
+               if(item instanceof Consumable) {
+                    ui.showMessage("You can eat the " + item.getShortName());
+                }
+                else {
+                    ui.showMessage("You can't eat the " + item.getShortName());
+                }
+
                 continue;
             }
 
