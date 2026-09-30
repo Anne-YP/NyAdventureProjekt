@@ -62,9 +62,13 @@ public class Adventure {
 
                 ui.showMessage("Trying to eat: " + itemName);
 
+                boolean foundInInventory = true;
+
                 Item item = player.findItem(itemName);
 
                 if(item == null) {
+                    foundInInventory = false;
+
                     item = player.getCurrentRoom().findItem(itemName);
                 }
 
@@ -78,6 +82,13 @@ public class Adventure {
                    Consumable consumable = (Consumable) item;
 
                    player.changeHealth(consumable.getHealthPoints());
+
+                   if(foundInInventory) {
+                       player.removeItem(item);
+                   }
+                   else {
+                       player.getCurrentRoom().removeItem(item);
+                   }
 
                     ui.showMessage("You ate the " + item.getShortName());
                 }
