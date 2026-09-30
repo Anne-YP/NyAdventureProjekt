@@ -11,7 +11,7 @@ public class Map {
                 "Water drips from the ceiling somewhere in the dark.");
 
         Room r3 = new Room("You are in room 3",
-                "There is a tree growing in a ray of light." +
+                "There is a tree growing in a ray of light. " +
                         "A sword is hanging from one of its branches.");
 
         Room r4 = new Room("You are in room 4",
