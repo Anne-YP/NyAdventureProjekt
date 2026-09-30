@@ -4,10 +4,12 @@ public class Player {
 
     private Room currentRoom;
     private ArrayList<Item> inventory;
+    private int health;
 
     public Player(Room startingRoom) {
         this.currentRoom = startingRoom;
         inventory = new ArrayList<>();
+        health = 100;
     }
 
 // rooms
@@ -51,6 +53,27 @@ public class Player {
             }
         }
         return null;
+    }
+    // Health-getter
+    public int getHealth() {
+        return health;
+    }
+
+    public String getHealthdescription() {
+        if (health >= 100) {
+            return "you are in perfect health";
+        }
+        if (health >= 50) {
+            return "you are in good health, \n" +
+                    "but avoid fighting right now";
+        }
+        if (health >= 25) {
+            return "you are wounded - find something healthy to eat";
+        }
+        if (health >= 1) {
+            return "you are barely alive";
+        }
+        return "you should be dead";
     }
 }
 

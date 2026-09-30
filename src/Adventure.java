@@ -57,7 +57,6 @@ public class Adventure {
             }
 
             switch (command) {
-
                 case "look":
                     Room currentRoom = player.getCurrentRoom();
                     ui.showMessage(currentRoom.getName());
@@ -86,7 +85,8 @@ public class Adventure {
                             "Type in 'look' to look around the room\n" +
                             "To move type either 'go north', 'go south', 'go east' or 'go west'\n" +
                             "To pick up an item type 'take *name of item*'\n" +
-                            "To drop an item type 'drop *name of item*'");
+                            "To drop an item type 'drop *name of item*'\n" +
+                            "To see your health type 'health'");
                     break;
 
                 // Check refactor possibility of .getCurrentRoom() in move-command
@@ -136,6 +136,11 @@ public class Adventure {
                             ui.showMessage("- " + item.getLongName());
                         }
                     }
+                    break;
+
+                case "health":
+                    ui.showMessage("Health: " + player.getHealth() +
+                            "- " + player.getHealthdescription());
                     break;
 
                 default:
