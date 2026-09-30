@@ -1,9 +1,9 @@
 public class Map {
-    // Create Map for Rooms
+
     private Room startingRoom;
-    //
+
     public Map() {
-        // create rooms
+        // Create rooms
         Room r1 = new Room("You are in room 1",
                 "A room with no distinct features, except two doors.");
 
@@ -31,8 +31,7 @@ public class Map {
         Room r9 = new Room("You are in room 9",
                 "There is a mythical creature offering you bread.");
 
-
-// create items
+// Create items
         Item key = new Item("key", "A rusty key in a glass jar");
         Item sword = new Item("sword", "A long sword");
         Item lamp = new Item("lamp", "An ancient oil lamp");
@@ -43,7 +42,11 @@ public class Map {
         Item book = new Item("book", "A book: 'How to defeat a dragon'");
         Item container = new Item("container", "A water container");
 
-        // assign items to rooms
+        // Create Food Items
+        Food bread = new Food("bread", "a loaf of stale bread", 10);
+        Food mushroom = new Food("mushroom", "a pale glowing mushroom", -50);
+
+        // Assign items and food items to rooms
         r2.addItem(lamp);
         r2.addItem(book);
 
@@ -60,6 +63,7 @@ public class Map {
         r8.addItem(key);
 
         r9.addItem(food);
+        r9.addItem(bread);
 
         // set directions for rooms
         r1.setEast(r2);
@@ -94,6 +98,5 @@ public class Map {
 
     public Room getStartingRoom() {
         return startingRoom;
-
     }
 }
