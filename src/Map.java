@@ -11,13 +11,15 @@ public class Map {
                 "Water drips from the ceiling somewhere in the dark.");
 
         Room r3 = new Room("You are in room 3",
-                "There is a tree growing in a ray of light. A sword is hanging from one of its branches.");
+                "There is a tree growing in a ray of light." +
+                        "A sword is hanging from one of its branches.");
 
         Room r4 = new Room("You are in room 4",
                 "There is a orc standing in front of you. What do you do?");
 
         Room r5 = new Room("You are in room 5",
-                "THIS IS A SPECIAL ROOM");
+                "There is a dragon guarding a treasure chest filled with gold.\n" +
+                        "Defeat the dragon to collect the gold and win the game!");
 
         Room r6 = new Room("you are in room 6",
                 "There is a bridge crossing a black lake.");
@@ -43,8 +45,11 @@ public class Map {
         Item container = new Item("container", "A water container");
 
         // Create Food Items
-        Food bread = new Food("bread", "a loaf of stale bread", 10);
-        Food mushroom = new Food("mushroom", "a pale glowing mushroom", -50);
+        Consumable bread = new Consumable("bread",
+                "a loaf of stale bread", 10);
+
+        Consumable mushroom = new Consumable("mushroom",
+                "a pale glowing mushroom", -50);
 
         // Assign items and food items to rooms
         r2.addItem(lamp);
