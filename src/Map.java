@@ -35,15 +35,15 @@ public class Map {
                 "There is a mythical creature offering you bread.");
 
 // Create items
-        Item key = new Item("key", "A rusty key inside a pale glowing mushroom");
-        Item sword = new Item("sword", "A long sword");
-        Item lamp = new Item("lamp", "An ancient oil lamp");
-        Item archbow = new Item("archbow", "A golden bejewelled archbow");
-        Item arrows = new Item("arrows", "A case with five arrows");
-        Item gold = new Item("gold", "A treasure chest filled with gold");
-       // Item food = new Item("food", "A loaf of bread");
-        Item book = new Item("book", "A book: 'How to defeat a dragon'");
-        Item container = new Item("container", "A water container");
+        Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
+        Item sword = new Item("sword", "a long sword");
+        Item lamp = new Item("lamp", "an ancient oil lamp");
+        Item archbow = new Item("archbow", "a golden bejewelled archbow");
+        Item arrows = new Item("arrows", "a case with five arrows");
+        Item gold = new Item("gold", "a treasure chest filled with gold");
+       // Item food = new Item("food", "a loaf of bread");
+        Item book = new Item("book", "a book: 'How to defeat a dragon'");
+        Item container = new Item("container", "a water container");
 
         // Create Food Items
         Consumable bread = new Consumable("bread",

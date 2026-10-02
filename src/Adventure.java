@@ -63,15 +63,11 @@ public class Adventure {
                 switch (outcome.getResult()) {
                     case NOT_FOUND -> ui.showMessage("There is nothing like " +
                             itemName + " to eat around here.");
-                    break;
 
-                    case NOT_EDIBLE -> ui.showMessage("You can't eat the " + outcome.getItemName());
-                    break;
+                    case NOT_EDIBLE -> ui.showMessage("You can't eat " + outcome.getItemName());
 
-                    case SUCCESS -> ui.showMessage("You ate the " + outcome.getItemName());
-                    break;
+                    case SUCCESS -> ui.showMessage("You ate " + outcome.getItemName());
 
-                    continue;
                 }
             }
 
@@ -170,5 +166,3 @@ public class Adventure {
             }
         }
     }
-
-}

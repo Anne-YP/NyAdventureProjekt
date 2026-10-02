@@ -56,11 +56,15 @@ public class Player {
 
     public EatOutcome eat(String itemName) {
 
+        boolean foundInInventory = true;
+
         Item item = findItem(itemName);
 
         if(item == null) {
+            foundInInventory = false;
             item = currentRoom.findItem(itemName);
         }
+
         if(item == null) {
             return new EatOutcome(EatResult.NOT_FOUND, itemName, 0);
         }
@@ -70,6 +74,16 @@ public class Player {
             return new EatOutcome(EatResult.NOT_EDIBLE, item.getLongName(), 0);
         }
 
+        Consumable consumable = (Consumable) item;
+        changeHealth(consumable.getHealthPoints());
+
+        if(foundInInventory) {
+            removeItem(item);
+        }
+
+        else {
+            currentRoom.removeItem(item);
+        }
         return new EatOutcome(EatResult.SUCCESS, item.getLongName(), 0);
     }
 
