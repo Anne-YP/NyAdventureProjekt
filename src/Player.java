@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class Player {
 
     private Room currentRoom;
@@ -54,6 +53,26 @@ public class Player {
         }
         return null;
     }
+
+    public EatOutcome eat(String itemName) {
+
+        Item item = findItem(itemName);
+
+        if(item == null) {
+            item = currentRoom.findItem(itemName);
+        }
+        if(item == null) {
+            return new EatOutcome(EatResult.NOT_FOUND, itemName, 0);
+        }
+
+        if(!(item instanceof Consumable)) {
+
+            return new EatOutcome(EatResult.NOT_EDIBLE, item.getLongName(), 0);
+        }
+
+        return new EatOutcome(EatResult.SUCCESS, item.getLongName(), 0);
+    }
+
     // Health-getter
     public int getHealth() {
         return health;
