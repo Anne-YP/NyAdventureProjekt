@@ -55,8 +55,14 @@ public class Adventure {
                 continue;
             }
 
-            if (command.startsWith("eat ")) {
-                String itemName = command.substring(4);
+            String itemName;
+
+            if (command.startsWith("eat ") || command.startsWith("drink ")) {
+                itemName = command.substring(4);
+            }
+                else {
+                itemName = command.substring(6);
+            }
 
                 EatOutcome outcome = player.eat(itemName);
 
@@ -66,10 +72,10 @@ public class Adventure {
 
                     case NOT_EDIBLE -> ui.showMessage("You can't eat " + outcome.getItemName());
 
-                    case SUCCESS -> ui.showMessage("You ate " + outcome.getItemName());
+                    case SUCCESS -> ui.showMessage("You " + outcome.getVerb() +
+                            " " + outcome.getItemName());
 
                 }
-            }
 
 
                 switch (command) {

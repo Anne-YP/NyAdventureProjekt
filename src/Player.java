@@ -66,12 +66,12 @@ public class Player {
         }
 
         if(item == null) {
-            return new EatOutcome(EatResult.NOT_FOUND, itemName, 0);
+            return new EatOutcome(EatResult.NOT_FOUND, itemName, 0, "");
         }
 
         if(!(item instanceof Consumable)) {
 
-            return new EatOutcome(EatResult.NOT_EDIBLE, item.getLongName(), 0);
+            return new EatOutcome(EatResult.NOT_EDIBLE, item.getLongName(), 0, "");
         }
 
         Consumable consumable = (Consumable) item;
@@ -84,7 +84,8 @@ public class Player {
         else {
             currentRoom.removeItem(item);
         }
-        return new EatOutcome(EatResult.SUCCESS, item.getLongName(), 0);
+        return new EatOutcome(EatResult.SUCCESS, item.getLongName(), 0,
+                consumable.getConsumeVerb());
     }
 
     // Health-getter

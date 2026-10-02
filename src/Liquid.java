@@ -1,3 +1,11 @@
-//public class Liquid extends Consumable{
+public class Liquid extends Consumable {
 
-//}
+    public Liquid(String shortName, String longName, int healthPoints) {
+        super(shortName, longName, healthPoints);
+    }
+
+    @Override
+    public String getConsumeVerb() {
+        return "drank";
+    }
+}

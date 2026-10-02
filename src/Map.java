@@ -41,16 +41,19 @@ public class Map {
         Item archbow = new Item("archbow", "a golden bejewelled archbow");
         Item arrows = new Item("arrows", "a case with five arrows");
         Item gold = new Item("gold", "a treasure chest filled with gold");
-       // Item food = new Item("food", "a loaf of bread");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
         Item container = new Item("container", "a water container");
 
         // Create Food Items
-        Consumable bread = new Consumable("bread",
-                "a loaf of stale bread", 10);
+        Food bread = new Food("bread",
+                "a loaf of stale bread", 20);
 
-        Consumable mushroom = new Consumable("mushroom",
+        Food mushroom = new Food("mushroom",
                 "a pale glowing mushroom", -50);
+
+        // Create liquid Items
+        Liquid water = new Liquid("water", "fresh cold water", 15);
+
 
         // Assign items and food items to rooms
         r2.addItem(lamp);
@@ -63,6 +66,7 @@ public class Map {
         r5.addItem(gold);
 
         r6.addItem(archbow);
+        r6.addItem(water);
 
         r7.addItem(container);
 

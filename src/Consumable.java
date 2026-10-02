@@ -8,6 +8,11 @@ public class Consumable extends Item{
     }
 
     public int getHealthPoints() {
+
         return healthPoints;
+    }
+
+    public String getConsumeVerb() {
+        return "eat";
     }
 }
