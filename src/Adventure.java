@@ -55,6 +55,28 @@ public class Adventure {
                 continue;
             }
 
+            if (command.equals("drink water")) {
+                Item item = player.findItem("container");
+
+                if (item == null) {
+                    ui.showMessage("You need something to collect the water in");
+
+                    continue;
+                }
+                Container container = (Container) item;
+                if (!container.isFilled()) {
+                    ui.showMessage("Your container is empty.");
+                    continue;
+                }
+
+                Liquid liquid = container.getContent();
+                player.changeHealth(liquid.getHealthPoints());
+
+                ui.showMessage("You drank the " + liquid.getLongName());
+                container.empty();
+                continue;
+            }
+
             if (command.startsWith("eat ") || command.startsWith("drink ")) {
                 String itemName;
 
@@ -67,13 +89,39 @@ public class Adventure {
 
                 switch (outcome.getResult()) {
                     case NOT_FOUND -> ui.showMessage("There is nothing like " +
-                            itemName + " to eat around here.");
+                            itemName + " to eat or drink around here.");
 
-                    case NOT_EDIBLE -> ui.showMessage("You can't eat " + outcome.getItemName());
+                    case NOT_EDIBLE -> ui.showMessage("You can't eat or drink " + outcome.getItemName());
 
                     case SUCCESS -> ui.showMessage("You " + outcome.getVerb() +
                             " " + outcome.getItemName());
                 }
+                continue;
+            }
+
+            if (command.equals("fill container")) {
+                Item item = player.findItem("container");
+
+                if (item == null) {
+                    ui.showMessage("You don't have a container");
+                    continue;
+                }
+
+                if (!player.getCurrentRoom().hasWaterSource()) {
+                    ui.showMessage("There is no water source here.");
+                    continue;
+                }
+                // Adventure skal have at vide, at container er fra Container-klassen
+                // og at det skal behandle container som et Container-objekt. Derfor følgende:
+                Container container = (Container) item;
+
+                if (container.isFilled()) {
+                    ui.showMessage("The container is already full.");
+                    continue;
+                }
+
+                container.fill(map.getWater());
+                ui.showMessage("You have filled the container with water.");
                 continue;
             }
 

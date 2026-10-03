@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class Room {
     private String name;
     private String description;
+    // Tilføjer en hasWaterSource, hvis vi gerne vil lave flere vandsources i andre rum.
+    private boolean waterSource;
 
     private Room north;
     private Room south;
@@ -14,6 +16,7 @@ public class Room {
     public Room (String name, String description) {
         this.name = name;
         this.description = description;
+        waterSource = false;
 
         items = new ArrayList<>();
     }
@@ -72,5 +75,13 @@ public class Room {
     }
     public void setWest(Room west) {
         this.west = west;
+    }
+
+    // Getter and Setter for hasWaterSource
+    public boolean hasWaterSource() {
+        return waterSource;
+    }
+    public void setWaterSource(boolean waterSource) {
+        this.waterSource = waterSource;
     }
 }

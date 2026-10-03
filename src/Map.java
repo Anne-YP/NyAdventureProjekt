@@ -1,6 +1,7 @@
 public class Map {
 
     private Room startingRoom;
+    private Liquid water;
 
     public Map() {
         // Create rooms
@@ -42,7 +43,7 @@ public class Map {
         Item arrows = new Item("arrows", "a case with five arrows");
         Item gold = new Item("gold", "a treasure chest filled with gold");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
-        Item container = new Item("container", "a water container");
+        Container container = new Container("container", "a water container");
 
         // Create Food Items
         Food bread = new Food("bread",
@@ -51,13 +52,13 @@ public class Map {
         Food mushroom = new Food("mushroom",
                 "a pale glowing mushroom", -50);
 
-        // Create liquid Items
-        Liquid water = new Liquid("water", "fresh cold water", 15);
+        // Create Liquid water
+        water = new Liquid("water", "fresh cold water", 15);
 
-
-        // Assign items and food items to rooms
+        // Assign items and food items to rooms + Water Source(true/false)
         r2.addItem(lamp);
         r2.addItem(book);
+        r2.setWaterSource(true);
 
         r3.addItem(sword);
 
@@ -109,5 +110,9 @@ public class Map {
 
     public Room getStartingRoom() {
         return startingRoom;
+    }
+    // getter til water
+    public Liquid getWater(){
+        return water;
     }
 }
