@@ -16,31 +16,30 @@ public class Map {
                         "A sword is hanging from one of its branches.");
 
         Room r4 = new Room("You are in room 4",
-                "There is an orc standing in front of you. What do you do?");
+                "An orc standing in front of you. Kill the orc to get the book.");
 
         Room r5 = new Room("You are in room 5",
-                "There is a dragon guarding a treasure chest filled with gold.\n" +
+                "A dragon is guarding a treasure chest filled with gold.\n" +
                         "Defeat the dragon to collect the gold and win the game!");
 
         Room r6 = new Room("you are in room 6",
-                "There is a bridge crossing a black lake.");
+                "A bridge is crossing a black lake.");
 
         Room r7 = new Room("You are in room 7",
-                "There is an empty water container lying on the floor.");
+                "An empty water container is lying on the floor.");
 
         Room r8 = new Room("You are in room 8",
                 "A rusty key is kept inside a pale glowing mushroom.\n" +
                         "Eat the mushroom to access the key.");
 
         Room r9 = new Room("You are in room 9",
-                "There is a mythical creature offering you bread.");
+                "A mythical creature is offering you bread.");
 
         // Create items
         Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
         // Item sword = new Item("sword", "a long sword");
         Item lamp = new Item("lamp", "an ancient oil lamp");
-        // Item archbow = new Item("archbow", "a golden bejewelled archbow");
-        Item arrows = new Item("arrows", "a case with five arrows");
+        // Item archbow = new Item("archbow", "a golden bejewelled archbow with arrow");
         Item gold = new Item("gold", "a treasure chest filled with gold");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
 
@@ -59,16 +58,16 @@ public class Map {
 
         // Create weapons
         Weapon sword = new MeleeWeapon("sword", "a long sword", 20);
-        Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow", 10, 5);
+        Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow " +
+                "with arrows", 10, 5);
 
         // Assign items and food items to rooms + Water Source(true/false)
         r2.addItem(lamp);
-        r2.addItem(book);
         r2.setWaterSource(true);
 
         r3.addItem(sword);
 
-        r4.addItem(arrows);
+        r4.addItem(book);
 
         r5.addItem(gold);
 
