@@ -44,6 +44,10 @@ public class Player {
     }
     public void removeItem(Item item) {
         inventory.remove(item);
+
+        if(item == equippedWeapon) {
+            equippedWeapon = null;
+        }
     }
 
     public Item findItem(String shortName) {

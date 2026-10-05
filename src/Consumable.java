@@ -8,7 +8,6 @@ public class Consumable extends Item{
     }
 
     public int getHealthPoints() {
-
         return healthPoints;
     }
 

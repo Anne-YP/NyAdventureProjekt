@@ -146,11 +146,11 @@ public class Adventure {
                     switch (result.getResult()) {
                         case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped");
 
-                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getLongName()
+                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getShortName()
                          + " is empty");
 
                         case SUCCESS -> ui.showMessage("You " + result.getWeapon().getAttackVerb() +
-                                " " + result.getWeapon().getLongName() + " at the empty air." +
+                                " " + result.getWeapon().getShortName() + " at the empty air." +
                                 result.getWeapon().getUsesLeftText());
                     }
                     continue;
