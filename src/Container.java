@@ -3,7 +3,6 @@ public class Container extends Item{
 
     public Container (String shortName, String longName) {
         super(shortName, longName);
-        //filled = false;
     }
 
     public boolean isFilled(){

@@ -11,7 +11,7 @@ public class Player {
         health = 100;
     }
 
-// rooms
+    // Rooms
     public Room getCurrentRoom() {
         return currentRoom;
     }
@@ -34,7 +34,7 @@ public class Player {
         }
     }
 
-    // inventory
+    // Inventory
     public ArrayList<Item> getInventory() {
         return inventory;
     }
@@ -57,7 +57,6 @@ public class Player {
     public EatOutcome eat(String itemName) {
 
         boolean foundInInventory = true;
-
         Item item = findItem(itemName);
 
         if(item == null) {
@@ -70,7 +69,6 @@ public class Player {
         }
 
         if(!(item instanceof Consumable)) {
-
             return new EatOutcome(EatResult.NOT_EDIBLE, item.getLongName(), 0, "");
         }
 

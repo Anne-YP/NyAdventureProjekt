@@ -35,14 +35,16 @@ public class Map {
         Room r9 = new Room("You are in room 9",
                 "There is a mythical creature offering you bread.");
 
-// Create items
+        // Create items
         Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
-        Item sword = new Item("sword", "a long sword");
+        // Item sword = new Item("sword", "a long sword");
         Item lamp = new Item("lamp", "an ancient oil lamp");
-        Item archbow = new Item("archbow", "a golden bejewelled archbow");
+        // Item archbow = new Item("archbow", "a golden bejewelled archbow");
         Item arrows = new Item("arrows", "a case with five arrows");
         Item gold = new Item("gold", "a treasure chest filled with gold");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
+
+        // Create container
         Container container = new Container("container", "a water container");
 
         // Create Food Items
@@ -54,6 +56,10 @@ public class Map {
 
         // Create Liquid water
         water = new Liquid("water", "fresh cold water", 15);
+
+        // Create weapons
+        Weapon sword = new MeleeWeapon("sword", "a long sword", 20);
+        Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow", 10, 5);
 
         // Assign items and food items to rooms + Water Source(true/false)
         r2.addItem(lamp);
