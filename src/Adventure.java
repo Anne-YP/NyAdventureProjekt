@@ -138,6 +138,7 @@ public class Adventure {
                     case SUCCESS -> ui.showMessage("You have equipped " + outcome.getItemName());
                 }
                 continue;
+            }
 
                 if(command.equals("attack")) {
                     AttackOutcome result = player.attack();
@@ -154,7 +155,7 @@ public class Adventure {
                     }
                     continue;
                 }
-            }
+
 
                 switch (command) {
                     case "look":
