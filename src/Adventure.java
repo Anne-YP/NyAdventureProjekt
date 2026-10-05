@@ -125,6 +125,21 @@ public class Adventure {
                 continue;
             }
 
+            if(command.startsWith("equip ")) {
+                String itemName = command.substring(6);
+
+                EquipOutcome outcome = player.equip(itemName);
+
+                switch (outcome.getResult()) {
+                    case NOT_FOUND -> ui.showMessage("You don't have a " + itemName);
+
+                    case NOT_A_WEAPON -> ui.showMessage(outcome.getItemName() + " is not a weapon");
+
+                    case SUCCESS -> ui.showMessage("You have equipped " + outcome.getItemName());
+                }
+                continue;
+            }
+
                 switch (command) {
                     case "look":
                         Room currentRoom = player.getCurrentRoom();
@@ -204,12 +219,18 @@ public class Adventure {
                                 ui.showMessage("- " + item.getLongName());
                             }
                         }
+                        Weapon equippedWeapon = player.getEquippedWeapon();
+                        if(equippedWeapon != null) {
+                            ui.showMessage("Equipped: " + equippedWeapon.getLongName());
+                        }
                         break;
 
                     case "health":
                         ui.showMessage("Health: " + player.getHealth() +
                                 " - " + player.getHealthdescription());
                         break;
+
+
 
                     default:
                         ui.showMessage("Unknown command");

@@ -4,6 +4,7 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
     private int health;
+    private Weapon equippedWeapon;
 
     public Player(Room startingRoom) {
         this.currentRoom = startingRoom;
@@ -53,6 +54,7 @@ public class Player {
         }
         return null;
     }
+
 
     public EatOutcome eat(String itemName) {
 
@@ -111,5 +113,26 @@ public class Player {
     public void changeHealth(int amount) {
         health += amount;
     }
+
+    // Weapon-getter
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
+
+    public EquipOutcome equip(String itemName) {
+        Item item = findItem(itemName);
+
+        if(item == null) {
+            return new EquipOutcome(EquipResult.NOT_FOUND, itemName);
+        }
+
+        if(!(item instanceof  Weapon)) {
+            return new EquipOutcome(EquipResult.NOT_A_WEAPON, item.getLongName());
+        }
+
+        equippedWeapon = (Weapon) item;
+        return new EquipOutcome(EquipResult.SUCCESS, item.getLongName());
+    }
+
 }
 
