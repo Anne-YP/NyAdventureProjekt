@@ -134,5 +134,18 @@ public class Player {
         return new EquipOutcome(EquipResult.SUCCESS, item.getLongName());
     }
 
+    public AttackOutcome attack() {
+        if(equippedWeapon == null) {
+            return new AttackOutcome(AttackResult.NO_WEAPON_EQUIPPED, null);
+        }
+
+        if(!equippedWeapon.canUse()) {
+            return new AttackOutcome(AttackResult.WEAPON_EMPTY, equippedWeapon);
+        }
+
+        equippedWeapon.use();
+        return new AttackOutcome(AttackResult.SUCCESS, equippedWeapon);
+    }
+
 }
 

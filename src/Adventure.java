@@ -138,6 +138,22 @@ public class Adventure {
                     case SUCCESS -> ui.showMessage("You have equipped " + outcome.getItemName());
                 }
                 continue;
+
+                if(command.equals("attack")) {
+                    AttackOutcome result = player.attack();
+
+                    switch (result.getResult()) {
+                        case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped");
+
+                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getLongName()
+                         + " is empty");
+
+                        case SUCCESS -> ui.showMessage("You " + result.getWeapon().getAttackVerb() +
+                                " " + result.getWeapon().getLongName() + " at the empty air." +
+                                result.getWeapon().getUsesLeftText());
+                    }
+                    continue;
+                }
             }
 
                 switch (command) {
