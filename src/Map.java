@@ -36,7 +36,7 @@ public class Map {
         Room r7 = new Room("You are in room 7",
                 "Spiderwebs are tangled throughout the room, and clings to" +
                         " your face. An empty water container is lying on the floor." +
-                        " you might need it to collect water in other rooms.");
+                        " You might need it to collect water in other rooms.");
 
         Room r8 = new Room("You are in room 8",
                 "The temperature in this room is rising. " +
@@ -49,7 +49,7 @@ public class Map {
         // Create items
         Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
         // Item sword = new Item("sword", "a long sword");
-        Item bludgeon = new Item( "bludgeon", "a dusty, knobbed bludgeon");
+        // Item bludgeon = new Item( "bludgeon", "a dusty, knobbed bludgeon");
         Item lamp = new Item("lamp", "an ancient oil lamp");
         // Item archbow = new Item("archbow", "a golden bejewelled archbow with arrow");
         Item gold = new Item("gold", "a treasure chest filled with gold");
@@ -72,6 +72,8 @@ public class Map {
         Weapon sword = new MeleeWeapon("sword", "a long sword", 20);
         Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow " +
                 "with arrows", 10, 5);
+        Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
+                10);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r1.addItem(bludgeon);
