@@ -6,30 +6,42 @@ public class Map {
     public Map() {
         // Create rooms
         Room r1 = new Room("You are in room 1",
-                "A room with no distinct features, except two doors.");
+                "A moldy smell fills the room. Shelves from floor to ceiling are covered" +
+                        " in dust. On one shelf lies a bludgeon.");
 
         Room r2 = new Room("You are in room 2",
-                "Water drips from the ceiling somewhere in the dark.");
+                "The moldy smell has intensified, and the sound of waterdrops " +
+                        "from the ceiling hitting the floor irritates your ears." +
+                        " somewhere in the dark you will find an ancient oil lamp.");
 
         Room r3 = new Room("You are in room 3",
-                "There is a tree growing in a ray of light. " +
-                        "A sword is hanging from one of its branches.");
+                "In a ray of light a tree is growing rapidly. " +
+                        "A long sword is hanging from one of its branches.");
 
         Room r4 = new Room("You are in room 4",
-                "An orc standing in front of you. Kill the orc to get the book.");
+                "You are surrounded by a heavy smell of garbage and see" +
+                        " an orc standing in front of you." +
+                        " Amongst the garbage lies a dusty old book: 'How to defeat a dragon'. " +
+                        " Kill the orc to get the book.");
 
         Room r5 = new Room("You are in room 5",
-                "A dragon is guarding a treasure chest filled with gold.\n" +
+                "The air feels warm and humid, and an intense smell of fire and soot" +
+                        " stings your nose. A dragon is guarding a treasure chest filled with gold.\n" +
                         "Defeat the dragon to collect the gold and win the game!");
 
         Room r6 = new Room("you are in room 6",
-                "A bridge is crossing a black lake.");
+                "The relaxing sound of flowing water meets your ears. " +
+                        "A bridge is crossing a black lake. Across the bridge you will find" +
+                        " a golden bejewelled archbow with five arrows.");
 
         Room r7 = new Room("You are in room 7",
-                "An empty water container is lying on the floor.");
+                "Spiderwebs are tangled throughout the room, and clings to" +
+                        " your face. An empty water container is lying on the floor." +
+                        " you might need it to collect water in other rooms.");
 
         Room r8 = new Room("You are in room 8",
-                "A rusty key is kept inside a pale glowing mushroom.\n" +
+                "The temperature in this room is rising. " +
+                        "A rusty key is kept inside a pale glowing mushroom.\n" +
                         "Eat the mushroom to access the key.");
 
         Room r9 = new Room("You are in room 9",
@@ -42,6 +54,7 @@ public class Map {
         // Item archbow = new Item("archbow", "a golden bejewelled archbow with arrow");
         Item gold = new Item("gold", "a treasure chest filled with gold");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
+        Item bludgeon = new Item( "bludgeon", "a dusty, knobbed bludgeon");
 
         // Create container
         Container container = new Container("container", "a water container");
@@ -62,6 +75,8 @@ public class Map {
                 "with arrows", 10, 5);
 
         // Assign items and food items to rooms + Water Source(true/false)
+        r1.addItem(bludgeon);
+
         r2.addItem(lamp);
         r2.setWaterSource(true);
 
