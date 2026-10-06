@@ -15,7 +15,7 @@ public class RangedWeapon extends Weapon{
     @Override
     public void use() {
         if (ammunition > 0) {
-            ammunition--;  // NOTE hvad gør -- ?
+            ammunition--;
         }
     }
 

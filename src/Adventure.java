@@ -156,7 +156,6 @@ public class Adventure {
                     continue;
                 }
 
-
                 switch (command) {
                     case "look":
                         Room currentRoom = player.getCurrentRoom();
