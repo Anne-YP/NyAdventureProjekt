@@ -79,6 +79,15 @@ public class Room {
         enemies.add(enemy);
     }
 
+    public Enemy findEnemy(String enemyName) {
+        for(Enemy enemy: enemies) {
+            if(enemy.getShortName().equalsIgnoreCase(enemyName)) {
+                return enemy;
+            }
+        }
+        return null;
+    }
+
     public void removeEnemy(Enemy enemy) {
         enemies.remove(enemy);
     }

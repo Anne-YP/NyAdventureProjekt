@@ -175,11 +175,25 @@ public class Adventure {
                         ArrayList<Item> items = currentRoom.getItems();
 
                         if (player.getCurrentRoom().getItems().isEmpty()) {
+                            ui.showMessage("");
                             ui.showMessage("There are no items here.");
                         } else {
+                            ui.showMessage("");
                             ui.showMessage("Items in this room:");
                             for (Item item : player.getCurrentRoom().getItems()) {
                                 ui.showMessage("- " + item.getLongName());
+                            }
+                        }
+
+                        ArrayList<Enemy> enemies = currentRoom.getEnemies();
+
+                        if(!enemies.isEmpty()) {
+                            ui.showMessage("");
+                            ui.showMessage("Enemies in this room: ");
+
+                            for(Enemy enemy: enemies) {
+                                ui.showMessage("- " + enemy.getLongName());
+                                ui.showMessage(enemy.getDescription());
                             }
                         }
                         break;

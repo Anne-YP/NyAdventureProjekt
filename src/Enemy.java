@@ -42,8 +42,21 @@ public class Enemy {
 
     public void hit(Weapon weapon) {
         health -= weapon.getDamage();
+
+        if(health <= 0) {
+            currentRoom.addItem(this.weapon);
+            currentRoom.removeEnemy(this);
+        }
     }
+
     public void attack(Player player) {
 
+    if(!weapon.canUse()) {
+        return;
     }
+    player.changeHealth(-weapon.getDamage());
+    weapon.use();
+    }
+
+
 }

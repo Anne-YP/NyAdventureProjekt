@@ -76,7 +76,7 @@ public class Map {
                 10);
 
         // Create enemies
-         Enemy orc = new Enemy("orc", "an angry orc", "A nasty angry orc is " +
+         Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
                  "charching at you.", 30, bludgeon, r4);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
