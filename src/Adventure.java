@@ -25,6 +25,11 @@ public class Adventure {
             if (command.startsWith("take ")) {
                 String itemName = command.substring(5);
 
+                if (itemName.equals("key") && !player.getCurrentRoom().isMushroomEaten()) {
+                    ui.showMessage("You must eat the mushroom before you can reach the key.");
+                    continue;
+                }
+
                 ui.showMessage("Searching for: [" + itemName + "]");
                 Item item = player.getCurrentRoom().findItem(itemName);
 
@@ -39,16 +44,18 @@ public class Adventure {
                     }
 
                     ui.showMessage("You picked up " + item.getLongName());
-                } else {
+                    continue;
+                }
+                else {
                     if (itemName.equals("water") && player.getCurrentRoom().hasWaterSource()) {
                         ui.showMessage("You need something to collect the water in first.");
                         continue;
                     }
                     ui.showMessage("There is nothing like " + itemName + " to take around here.");
+                    continue;
                 }
-                continue;
-
             }
+
             if (command.startsWith("drop ")) {
                 String itemName = command.substring(5);
 

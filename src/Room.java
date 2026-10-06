@@ -9,6 +9,7 @@ public class Room {
     private boolean hasSwordTree;
     private boolean hasBreadCreature;
     private boolean breadTaken;
+    private boolean mushroomEaten;
 
     private Room north;
     private Room south;
@@ -27,6 +28,7 @@ public class Room {
         hasSwordTree = false;
         hasBreadCreature = false;
         breadTaken = false;
+        mushroomEaten = false;
 
         items = new ArrayList<>();
 
@@ -161,6 +163,15 @@ public class Room {
 
     public void setBreadTaken(boolean breadTaken) {
         this.breadTaken = breadTaken;
+    }
+
+    //Getter and Setter for mushroomEaten
+    public boolean isMushroomEaten() {
+        return mushroomEaten;
+    }
+
+    public void setMushroomEaten(boolean mushroomEaten) {
+        this.mushroomEaten = mushroomEaten;
     }
 }
 

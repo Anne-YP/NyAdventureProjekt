@@ -84,13 +84,15 @@ public class Player {
         if(foundInInventory) {
             removeItem(item);
         }
-
         else {
             currentRoom.removeItem(item);
         }
+        if (item.getShortName().equals("mushroom")) {
+            currentRoom.setMushroomEaten(true);
+        }
         return new EatOutcome(EatResult.SUCCESS, item.getLongName(), 0,
                 consumable.getConsumeVerb());
-    }
+        }
 
     // Health-getter
     public int getHealth() {
