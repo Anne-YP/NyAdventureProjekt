@@ -13,12 +13,16 @@ public class Room {
 
     private ArrayList<Item> items;
 
+    private ArrayList<Enemy> enemies;
+
     public Room (String name, String description) {
         this.name = name;
         this.description = description;
         waterSource = false;
 
         items = new ArrayList<>();
+
+        enemies = new ArrayList<>();
     }
 
     public void addItem(Item item) {
