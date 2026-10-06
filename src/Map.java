@@ -44,7 +44,7 @@ public class Map {
                         "Eat the mushroom to access the key.");
 
         Room r9 = new Room("You are in room 9",
-                "A mythical creature is offering you bread.");
+                "");
 
         // Create items
         Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
@@ -98,6 +98,7 @@ public class Map {
 
       //  r9.addItem(food);
         r9.addItem(bread);
+        r9.setBreadCreature(true);
 
         // set directions for rooms
         r1.setEast(r2);

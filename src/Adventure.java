@@ -34,6 +34,11 @@ public class Adventure {
                     if (item.getShortName().equals("sword")) {
                         player.getCurrentRoom().setSwordTaken(true);
                     }
+                    if (item.getShortName().equals("bread") && player.getCurrentRoom().hasBreadCreature()) {
+                        player.getCurrentRoom().setBreadTaken(true);
+                    }
+
+
                     ui.showMessage("You picked up " + item.getLongName());
                 } else {
                     ui.showMessage("There is nothing like " + itemName + " to take around here.");
