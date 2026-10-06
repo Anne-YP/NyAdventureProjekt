@@ -7,6 +7,8 @@ public class Room {
     private boolean waterSource;
     private boolean swordTaken;
     private boolean hasSwordTree;
+    private boolean hasBreadCreature;
+    private boolean breadTaken;
 
     private Room north;
     private Room south;
@@ -23,6 +25,8 @@ public class Room {
         waterSource = false;
         swordTaken = false;
         hasSwordTree = false;
+        hasBreadCreature = false;
+        breadTaken = false;
 
         items = new ArrayList<>();
 
@@ -58,6 +62,15 @@ public class Room {
 
         if (hasSwordTree && !swordTaken) {
             text += " A long sword is hanging from one of its branches.";
+        }
+
+        if (hasBreadCreature) {
+            if (!breadTaken) {
+                text += " A mythical creature is offering you bread.";
+            }
+            else {
+                text += " A mythical creature is in front of you.";
+            }
         }
         return text;
     }
@@ -112,6 +125,21 @@ public class Room {
     }
     public void setSwordTree(boolean hasSwordTree) {
         this.hasSwordTree = hasSwordTree;
+    }
+
+    //Getter and Setter for hasBreadCreature
+    public boolean hasBreadCreature() {
+        return hasBreadCreature;
+    }
+    public void setBreadCreature(boolean hasBreadCreature) {
+        this.hasBreadCreature = hasBreadCreature;
+    }
+    public boolean isBreadTaken() {
+        return breadTaken;
+    }
+
+    public void setBreadTaken(boolean breadTaken) {
+        this.breadTaken = breadTaken;
     }
 }
 
