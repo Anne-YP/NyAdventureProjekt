@@ -5,6 +5,8 @@ public class Room {
     private String description;
     // Tilføjer en hasWaterSource, hvis vi gerne vil lave flere vandsources i andre rum.
     private boolean waterSource;
+    private boolean swordTaken;
+    private boolean hasSwordTree;
 
     private Room north;
     private Room south;
@@ -19,6 +21,8 @@ public class Room {
         this.name = name;
         this.description = description;
         waterSource = false;
+        swordTaken = false;
+        hasSwordTree = false;
 
         items = new ArrayList<>();
 
@@ -50,7 +54,12 @@ public class Room {
         return name;
     }
     public String getDescription(){
-        return description;
+        String text = description;
+
+        if (hasSwordTree && !swordTaken) {
+            text += " A long sword is hanging from one of its branches.";
+        }
+        return text;
     }
 
     // Getters for north, south, east and west
@@ -88,4 +97,21 @@ public class Room {
     public void setWaterSource(boolean waterSource) {
         this.waterSource = waterSource;
     }
+
+    // Getter and Setter for isSwordTaken
+    public boolean isSwordTaken() {
+        return swordTaken;
+    }
+    public void setSwordTaken(boolean swordTaken) {
+        this.swordTaken = swordTaken;
+    }
+
+    // Getter and Setter for hasSwordTree
+    public boolean hasSwordTree() {
+        return hasSwordTree;
+    }
+    public void setSwordTree(boolean hasSwordTree) {
+        this.hasSwordTree = hasSwordTree;
+    }
 }
+

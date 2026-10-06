@@ -12,8 +12,7 @@ public class Map {
                 "Water drips from the ceiling somewhere in the dark.");
 
         Room r3 = new Room("You are in room 3",
-                "There is a tree growing in a ray of light. " +
-                        "A sword is hanging from one of its branches.");
+                "There is a tree growing in a ray of light.");
 
         Room r4 = new Room("You are in room 4",
                 "An orc standing in front of you. Kill the orc to get the book.");
@@ -61,11 +60,12 @@ public class Map {
         Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow " +
                 "with arrows", 10, 5);
 
-        // Assign items and food items to rooms + Water Source(true/false)
+        // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r2.addItem(lamp);
         r2.setWaterSource(true);
 
         r3.addItem(sword);
+        r3.setSwordTree(true);
 
         r4.addItem(book);
 
