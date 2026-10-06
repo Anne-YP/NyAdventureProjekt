@@ -75,6 +75,18 @@ public class Room {
         return text;
     }
 
+    public void addEnemy(Enemy enemy) {
+        enemies.add(enemy);
+    }
+
+    public void removeEnemy(Enemy enemy) {
+        enemies.remove(enemy);
+    }
+
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
+
     // Getters for north, south, east and west
     public Room getNorth() {
         return north;

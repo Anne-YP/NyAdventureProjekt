@@ -75,6 +75,10 @@ public class Map {
         Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
                 10);
 
+        // Create enemies
+         Enemy orc = new Enemy("orc", "an angry orc", "A nasty angry orc is " +
+                 "charching at you.", 30, bludgeon, r4);
+
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r1.addItem(bludgeon);
 
@@ -85,6 +89,7 @@ public class Map {
         r3.setSwordTree(true);
 
         r4.addItem(book);
+        r4.addEnemy(orc);
 
         r5.addItem(gold);
 
