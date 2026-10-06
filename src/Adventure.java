@@ -31,7 +31,9 @@ public class Adventure {
                 if (item != null) {
                     player.getCurrentRoom().removeItem(item);
                     player.addItem(item);
-
+                    if (item.getShortName().equals("sword")) {
+                        player.getCurrentRoom().setSwordTaken(true);
+                    }
                     ui.showMessage("You picked up " + item.getLongName());
                 } else {
                     ui.showMessage("There is nothing like " + itemName + " to take around here.");
