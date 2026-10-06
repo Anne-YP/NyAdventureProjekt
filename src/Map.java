@@ -30,8 +30,8 @@ public class Map {
 
         Room r6 = new Room("you are in room 6",
                 "The relaxing sound of flowing water meets your ears. " +
-                        "A bridge is crossing a black lake. Across the bridge you will find" +
-                        " a golden bejewelled archbow with five arrows.");
+                        "A bridge is crossing a black lake with drinkable water. " +
+                        "Across the bridge you will find a golden bejewelled archbow with five arrows.");
 
         Room r7 = new Room("You are in room 7",
                 "Spiderwebs are tangled throughout the room, and clings to" +
