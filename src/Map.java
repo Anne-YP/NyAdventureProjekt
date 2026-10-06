@@ -79,7 +79,6 @@ public class Map {
         r1.addItem(bludgeon);
 
         r2.addItem(lamp);
-        r2.addItem(water);
         r2.setWaterSource(true);
 
         r3.addItem(sword);
@@ -90,7 +89,7 @@ public class Map {
         r5.addItem(gold);
 
         r6.addItem(archbow);
-        r6.addItem(water);
+        r6.setWaterSource(true);
 
         r7.addItem(container);
 

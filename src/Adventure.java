@@ -38,9 +38,12 @@ public class Adventure {
                         player.getCurrentRoom().setBreadTaken(true);
                     }
 
-
                     ui.showMessage("You picked up " + item.getLongName());
                 } else {
+                    if (itemName.equals("water") && player.getCurrentRoom().hasWaterSource()) {
+                        ui.showMessage("You need something to collect the water in first.");
+                        continue;
+                    }
                     ui.showMessage("There is nothing like " + itemName + " to take around here.");
                 }
                 continue;
