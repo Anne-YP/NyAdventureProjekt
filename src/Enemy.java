@@ -40,13 +40,16 @@ public class Enemy {
         return weapon;
     }
 
-    public void hit(Weapon weapon) {
+    public boolean hit(Weapon weapon) {
         health -= weapon.getDamage();
 
         if(health <= 0) {
             currentRoom.addItem(this.weapon);
             currentRoom.removeEnemy(this);
+
+            return true;
         }
+        return false;
     }
 
     public void attack(Player player) {
@@ -57,6 +60,5 @@ public class Enemy {
     player.changeHealth(-weapon.getDamage());
     weapon.use();
     }
-
 
 }

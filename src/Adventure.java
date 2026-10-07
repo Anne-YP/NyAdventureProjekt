@@ -179,8 +179,23 @@ public class Adventure {
                         ui.showMessage("Enemy not found");
                     }
                     else {
-                        enemy.hit(player.getEquippedWeapon());
-                        ui.showMessage("Enemy health: " + enemy.getHealth());
+                        boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+                        if (enemyDied) {
+                            ui.showMessage("The enemy has been slain!");
+                        } else {
+                            ui.showMessage("Enemy health: " + enemy.getHealth());
+                            ui.showMessage("Player health: " + player.getHealth());
+                        }
+                    }
+                    continue;
+                }
+
+                if(command.equals("testenemyattack")) {
+                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
+
+                    if(enemy != null) {
+                        enemy.attack(player);
+                        ui.showMessage("Player health: " + player.getHealth());
                     }
                     continue;
                 }
