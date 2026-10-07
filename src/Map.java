@@ -93,7 +93,6 @@ public class Map {
 
         r4.addItem(book);
         r4.addEnemy(orc);
-        r4.addItem(bludgeon);
 
         r5.addItem(gold);
 

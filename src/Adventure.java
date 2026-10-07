@@ -173,6 +173,18 @@ public class Adventure {
                     continue;
                 }
 
+                if(command.equals("testhit")) {
+                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
+                    if(enemy == null) {
+                        ui.showMessage("Enemy not found");
+                    }
+                    else {
+                        enemy.hit(player.getEquippedWeapon());
+                        ui.showMessage("Enemy health: " + enemy.getHealth());
+                    }
+                    continue;
+                }
+
                 switch (command) {
                     case "look":
                         Room currentRoom = player.getCurrentRoom();
@@ -194,14 +206,18 @@ public class Adventure {
 
                         ArrayList<Enemy> enemies = currentRoom.getEnemies();
 
-                        if(!enemies.isEmpty()) {
-                            ui.showMessage("");
-                            ui.showMessage("Enemies in this room: ");
+                        ui.showMessage("");
+                        ui.showMessage("Enemies in this room: ");
 
+                        if(enemies.isEmpty()) {
+                            ui.showMessage("- none");
+                        }
+                        else{
                             for(Enemy enemy: enemies) {
                                 ui.showMessage("- " + enemy.getLongName());
                                 ui.showMessage(enemy.getDescription());
                             }
+
                         }
                         break;
 
