@@ -52,13 +52,13 @@ public class Enemy {
         return false;
     }
 
-    public void attack(Player player) {
+    public boolean attack(Player player) {
 
     if(!weapon.canUse()) {
-        return;
+        return false;
     }
     player.changeHealth(-weapon.getDamage());
     weapon.use();
+    return true;
     }
-
 }

@@ -173,32 +173,81 @@ public class Adventure {
                     continue;
                 }
 
-                if(command.equals("testhit")) {
-                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
-                    if(enemy == null) {
-                        ui.showMessage("Enemy not found");
+                if (command.startsWith("attack ")) {
+                    String enemyName = command.substring(7);
+
+                    Enemy enemy = player.getCurrentRoom().findEnemy(enemyName);
+                    if (enemy == null) {
+                        ui.showMessage("Enemy not found.");
+                        continue;
                     }
-                    else {
-                        boolean enemyDied = enemy.hit(player.getEquippedWeapon());
-                        if (enemyDied) {
-                            ui.showMessage("The enemy has been slain!");
-                        } else {
-                            ui.showMessage("Enemy health: " + enemy.getHealth());
-                            ui.showMessage("Player health: " + player.getHealth());
+
+                    AttackOutcome result = player.attack();
+                    switch(result.getResult()) {
+                        case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped.");
+
+                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getShortName() + " is empty.");
+
+                        case SUCCESS -> {
+                            boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+                            if (enemyDied) {
+                                ui.showMessage("The enemy has been slain!");
+                            } else {
+                                boolean enemyAttacked = enemy.attack(player);
+                                if (!enemyAttacked) {
+                                    ui.showMessage(enemy.getLongName() + " could not attack.");
+                                }
+                                if (player.getHealth() <= 0) {
+                                    ui.showMessage("You have died.");
+                                    return;
+                                }
+                                ui.showMessage("Enemy health: " + enemy.getHealth());
+                                ui.showMessage("Player health: " + player.getHealth());
+                            }
                         }
                     }
-                    continue;
-                }
-
-                if(command.equals("testenemyattack")) {
-                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
-
-                    if(enemy != null) {
-                        enemy.attack(player);
-                        ui.showMessage("Player health: " + player.getHealth());
+                        continue;
                     }
-                    continue;
-                }
+
+//                if(command.equals("testhit")) {
+//                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
+//                    if(enemy == null) {
+//                        ui.showMessage("Enemy not found");
+//                    }
+//                    else {
+//                        boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+//                        if (enemyDied) {
+//                            ui.showMessage("The enemy has been slain!");
+//                        }
+//                        else {
+//                            boolean enemyAttacked = enemy.attack(player);
+//                            if (!enemyAttacked) {
+//                                ui.showMessage(enemy.getLongName() + " could not attack.");
+//                            }
+//                            if (player.getHealth() <= 0) {
+//                                ui.showMessage("You have died.");
+//                                continue;
+//                            }
+//
+//                            ui.showMessage("Enemy health: " + enemy.getHealth());
+//                            ui.showMessage("Player health: " + player.getHealth());
+//                        }
+//                    }
+//                    continue;
+//                }
+
+//                if(command.equals("testenemyattack")) {
+//                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
+//
+//                    if(enemy != null) {
+//                        enemy.attack(player);
+//                        if (player.getHealth() <= 0) {
+//                            ui.showMessage("You have died.");
+//                            return;
+//                        }
+//                    }
+//                    continue;
+//                }
 
                 switch (command) {
                     case "look":
