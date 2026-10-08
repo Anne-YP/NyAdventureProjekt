@@ -17,7 +17,7 @@ public class Map {
                         "you will find an ancient oil lamp.");
 
         Room r3 = new Room("You are in room 3",
-                "In a ray of light a tree is growing rapidly.");
+                "In a ray of light a tree is growing rapidly.\n");
 
         Room r4 = new Room("You are in room 4",
                 "You are surrounded by a heavy smell of garbage.\n" +

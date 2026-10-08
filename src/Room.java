@@ -63,14 +63,14 @@ public class Room {
         String text = description;
 
         if (hasSwordTree && !swordTaken) {
-            text += " A long sword is hanging from one of its branches.";
+            text += "A long sword is hanging from one of its branches.";
         }
 
         if (hasBreadCreature) {
             if (!breadTaken) {
-                text += " A mythical creature is offering you bread.";
+                text += "A mythical creature is offering you bread.";
             } else {
-                text += " A mythical creature is in front of you.";
+                text += "A mythical creature is in front of you.";
             }
         }
 //        if (hasTrapdoor) {
