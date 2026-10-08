@@ -204,7 +204,10 @@ public class Adventure {
 
                     case SUCCESS -> {
                         boolean enemyDied = enemy.hit(player.getEquippedWeapon());
-                        ui.showMessage("You " + result.getWeapon().getAttackVerb() + " an arrow at the " + enemy.getShortName() + ".");
+
+                        //Lav en besked til melee og en til ranged
+                        ui.showMessage("You " + result.getWeapon().getAttackVerb() + " the " +
+                                result.getWeapon().getAttackNoun() + " at the" + enemy.getShortName() + ".");
                         ui.showMessage(result.getWeapon().getUsesLeftText());
 
                         ui.showMessage("The " + enemy.getShortName() + " strikes back.");

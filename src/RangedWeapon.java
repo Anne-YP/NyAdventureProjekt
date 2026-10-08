@@ -31,4 +31,9 @@ public class RangedWeapon extends Weapon{
      }
         return " " + ammunition + " arrows left.";
     }
+
+    @Override
+    public String getAttackNoun() {
+        return "arrow";
+    }
 }
