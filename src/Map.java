@@ -25,7 +25,7 @@ public class Map {
 
         Room r5 = new Room("You are in room 5",
                 "The air feels hot and humid. An intense smell of fire and soot\n" +
-                        "stings your nose. A dragon is guarding a trapdoor.\n" +
+                        "stings your nose. A giant red dragon is guarding a trapdoor.\n" +
                         "Defeat the dragon to get to the trapdoor and win the game!");
 
         Room r6 = new Room("you are in room 6",
@@ -83,7 +83,7 @@ public class Map {
         // Create enemies
          Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
                  "charching at you.", 50, bludgeon, r4);
-         Enemy dragon = new Enemy("dragon", "A red dragon", "A gigant red " +
+         Enemy dragon = new Enemy("dragon", "A red dragon", "A giant red " +
                  "dragon is starring at you whilst spitting fire.", 90, fire, r5);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
