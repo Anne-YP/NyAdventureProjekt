@@ -192,13 +192,14 @@ public class Adventure {
                             boolean enemyDied = enemy.hit(player.getEquippedWeapon());
                             if (enemyDied) {
                                 ui.showMessage("The enemy has been slain!");
+                                ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
                             } else {
                                 boolean enemyAttacked = enemy.attack(player);
                                 if (!enemyAttacked) {
                                     ui.showMessage(enemy.getLongName() + " could not attack.");
                                 }
                                 if (player.getHealth() <= 0) {
-                                    ui.showMessage("You have died.\n");
+                                    ui.showMessage("You have died.");
                                     ui.showMessage("GAME OVER!");
 
                                     isPlaying = false;
