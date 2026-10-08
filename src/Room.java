@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-//
 public class Room {
     private String name;
     private String description;
-    // Tilføjer en hasWaterSource, hvis vi gerne vil lave flere vandsources i andre rum.
     private boolean waterSource;
     private boolean swordTaken;
     private boolean hasSwordTree;
@@ -172,6 +170,7 @@ public class Room {
         this.hasBreadCreature = hasBreadCreature;
     }
 
+    //Getter and Setter for isBreadTaken
     public boolean isBreadTaken() {
         return breadTaken;
     }

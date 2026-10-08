@@ -59,7 +59,7 @@ public class Player {
         return null;
     }
 
-
+    // Eat
     public EatOutcome eat(String itemName) {
 
         boolean foundInInventory = true;

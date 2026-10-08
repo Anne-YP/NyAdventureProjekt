@@ -135,8 +135,7 @@ public class Adventure {
                     ui.showMessage("There is no water source here.");
                     continue;
                 }
-                // Adventure skal have at vide, at container er fra Container-klassen
-                // og at det skal behandle container som et Container-objekt. Derfor følgende:
+
                 Container container = (Container) item;
 
                 if (container.isFilled()) {

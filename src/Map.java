@@ -150,7 +150,7 @@ public class Map {
     public Room getStartingRoom() {
         return startingRoom;
     }
-    // getter til water
+
     public Liquid getWater(){
         return water;
     }
