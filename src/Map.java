@@ -75,7 +75,7 @@ public class Map {
                 "with arrows", 10, 5);
         Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
                 15);
-        Weapon daggar = new MeleeWeapon("dagger", "a small but sharp daggar",
+        Weapon daggar = new MeleeWeapon("daggar", "a small but sharp daggar",
                 5);
         Weapon fire = new RangedWeapon("fire", "dragon spitting fire", 30,
                 3);
@@ -99,6 +99,7 @@ public class Map {
         r4.addEnemy(orc);
 
         r5.addItem(gold);
+        r5.addEnemy(dragon);
 
         r6.addItem(archbow);
         r6.setWaterSource(true);
