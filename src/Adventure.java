@@ -110,8 +110,16 @@ public class Adventure {
 
                     case NOT_EDIBLE -> ui.showMessage("You can't eat or drink " + outcome.getItemName());
 
-                    case SUCCESS -> ui.showMessage("You " + outcome.getVerb() +
-                            " " + outcome.getItemName());
+                    case SUCCESS -> {
+                        ui.showMessage("You " + outcome.getVerb() +
+                                " " + outcome.getItemName());
+
+                        if (itemName.equalsIgnoreCase("mushroom")) {
+                            ui.showMessage("The mushroom tastes terrible and makes you feel sick.\n" +
+                                    "A strange sensation spreads through your body.\n " +
+                                    "You instantly regret eating the mushroom.");
+                        }
+                    }
                 }
                 continue;
             }
@@ -186,10 +194,15 @@ public class Adventure {
                     switch(result.getResult()) {
                         case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped.");
 
-                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getShortName() + " is empty.");
+                        case WEAPON_EMPTY -> ui.showMessage("You ran out of arrows and your " +
+                                result.getWeapon().getShortName() + " is empty.");
 
                         case SUCCESS -> {
                             boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+                            ui.showMessage("You " + result.getWeapon().getAttackVerb() + " an arrow at the " + enemy.getShortName() + ".");
+                            ui.showMessage(result.getWeapon().getUsesLeftText());
+
+                            ui.showMessage("The " + enemy.getShortName() + " strikes back.");
                             if (enemyDied) {
                                 ui.showMessage("The enemy has been slain!");
                                 ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
@@ -295,6 +308,7 @@ public class Adventure {
                             ui.showMessage("You can't go that way!");
                         }
                         break;
+
                     case "west":
                         if (player.move("west")) {
                             ui.showMessage(player.getCurrentRoom().getName());

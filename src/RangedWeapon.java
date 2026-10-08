@@ -26,6 +26,9 @@ public class RangedWeapon extends Weapon{
 
     @Override
     public String getUsesLeftText() {
-        return " " + ammunition + " shots left.";
+     if (ammunition == 1) {
+         return " 1 arrow left.";
+     }
+        return " " + ammunition + " arrows left.";
     }
 }

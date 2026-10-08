@@ -75,7 +75,7 @@ public class Map {
                 "with arrows", 10, 5);
         Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
                 15);
-        Weapon daggar = new MeleeWeapon("dagger", "a small but sharp daggar",
+        Weapon daggar = new MeleeWeapon("daggar", "a small but sharp daggar",
                 5);
 
         // Create enemies
