@@ -77,10 +77,14 @@ public class Map {
                 15);
         Weapon daggar = new MeleeWeapon("dagger", "a small but sharp daggar",
                 5);
+        Weapon fire = new RangedWeapon("fire", "dragon spitting fire", 30,
+                3);
 
         // Create enemies
          Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
                  "charching at you.", 50, bludgeon, r4);
+         Enemy dragon = new Enemy("dragon", "A red dragon", "A gigant red " +
+                 "dragon is starring at you whilst spitting fire.", 90, fire, r5);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r1.addItem(daggar);
