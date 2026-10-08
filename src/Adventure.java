@@ -198,8 +198,12 @@ public class Adventure {
                                     ui.showMessage(enemy.getLongName() + " could not attack.");
                                 }
                                 if (player.getHealth() <= 0) {
-                                    ui.showMessage("You have died.");
-                                    return;
+                                    ui.showMessage("You have died.\n");
+                                    ui.showMessage("GAME OVER!");
+
+                                    isPlaying = false;
+
+                                    continue;
                                 }
                                 ui.showMessage("Enemy health: " + enemy.getHealth());
                                 ui.showMessage("Player health: " + player.getHealth());
