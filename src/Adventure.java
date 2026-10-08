@@ -209,46 +209,6 @@ public class Adventure {
                         continue;
                     }
 
-//                if(command.equals("testhit")) {
-//                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
-//                    if(enemy == null) {
-//                        ui.showMessage("Enemy not found");
-//                    }
-//                    else {
-//                        boolean enemyDied = enemy.hit(player.getEquippedWeapon());
-//                        if (enemyDied) {
-//                            ui.showMessage("The enemy has been slain!");
-//                        }
-//                        else {
-//                            boolean enemyAttacked = enemy.attack(player);
-//                            if (!enemyAttacked) {
-//                                ui.showMessage(enemy.getLongName() + " could not attack.");
-//                            }
-//                            if (player.getHealth() <= 0) {
-//                                ui.showMessage("You have died.");
-//                                continue;
-//                            }
-//
-//                            ui.showMessage("Enemy health: " + enemy.getHealth());
-//                            ui.showMessage("Player health: " + player.getHealth());
-//                        }
-//                    }
-//                    continue;
-//                }
-
-//                if(command.equals("testenemyattack")) {
-//                    Enemy enemy = player.getCurrentRoom().findEnemy("orc");
-//
-//                    if(enemy != null) {
-//                        enemy.attack(player);
-//                        if (player.getHealth() <= 0) {
-//                            ui.showMessage("You have died.");
-//                            return;
-//                        }
-//                    }
-//                    continue;
-//                }
-
                 switch (command) {
                     case "look":
                         Room currentRoom = player.getCurrentRoom();
@@ -297,6 +257,9 @@ public class Adventure {
                                 "To pick up an item type 'take *name of item*'.\n" +
                                 "To drop an item type 'drop *name of item*'.\n" +
                                 "To see your health type 'health'.\n" +
+                                "To see your inventory type 'inventory'.\n" +
+                                "To equip your weapon type 'equip *name of weapon*'.\n" +
+                                "To attack enemies type 'attack *name of enemy*'.\n" +
                                 "To exit game type 'exit'");
                         break;
 
