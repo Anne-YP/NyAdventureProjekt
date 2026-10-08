@@ -108,7 +108,7 @@ public class Player {
                     "but avoid fighting right now";
         }
         if (health >= 25) {
-            return "you are wounded - find something healthy to eat";
+            return "you are wounded - find something to eat or drink";
         }
         if (health >= 1) {
             return "you are barely alive";
