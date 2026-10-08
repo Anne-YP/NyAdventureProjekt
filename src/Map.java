@@ -74,13 +74,13 @@ public class Map {
         Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow " +
                 "with arrows", 10, 5);
         Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
-                10);
+                15);
         Weapon daggar = new MeleeWeapon("dagger", "a small but sharp daggar",
                 5);
 
         // Create enemies
          Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
-                 "charching at you.", 30, bludgeon, r4);
+                 "charching at you.", 50, bludgeon, r4);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r1.addItem(daggar);
