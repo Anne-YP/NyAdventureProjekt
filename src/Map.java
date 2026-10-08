@@ -48,12 +48,12 @@ public class Map {
                 "As you enter the room, you're hit buy the sound of\n" +
                         "classical music. Three fairies are playing a harp.\n");
 
-        winningRoom = new Room("The enemies of the labyrinth are defeated and you are still\n" +
-                "standing. You slayed the dragon, got through the trapdoor and escaped the labyrinth\n" +
+        winningRoom = new Room("The enemies of the labyrinth are defeated and you are still standing.\n" +
+                "You slayed the dragon, got through the trapdoor and escaped the labyrinth.\n" +
                 "Congratulations!", "YOU WON THE GAME!");
 
         // Create items
-        Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
+        Item key = new Item("key", "a rusty key");
         Item lamp = new Item("lamp", "an ancient oil lamp");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
 
@@ -128,7 +128,7 @@ public class Map {
         r4.setSouth(r7);
 
         r5.setSouth(r8);
-        r5.setNorth(winningRoom);
+        //r5.setNorth(winningRoom);
 
         r6.setNorth(r3);
         r6.setSouth(r9);
@@ -143,7 +143,7 @@ public class Map {
         r9.setWest(r8);
         r9.setNorth(r6);
 
-        winningRoom.setSouth(r5);
+        //winningRoom.setSouth(r5);
 
         startingRoom = r1;
     }

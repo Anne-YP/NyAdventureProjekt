@@ -321,7 +321,7 @@ public class Adventure {
                                 "To exit game type 'exit'");
                         break;
 
-                    // Check refactor possibility of .getCurrentRoom() in move-command
+
                     case "north":
                         if (player.move("north")) {
                             ui.showMessage(player.getCurrentRoom().getName());

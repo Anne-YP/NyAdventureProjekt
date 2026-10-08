@@ -73,9 +73,11 @@ public class Room {
                 text += "A mythical creature is in front of you.";
             }
         }
-//        if (hasTrapdoor) {
-//            text += "\nA heavy trapdoor is set into the dusty floor.";
-//        }
+
+        if(mushroomEaten) {
+            text = "The temperature in this room is rising.";
+        }
+
         return text;
     }
 
