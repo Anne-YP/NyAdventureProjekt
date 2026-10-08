@@ -204,6 +204,7 @@ public class Adventure {
 
                     case SUCCESS -> {
                         boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+
                         if (result.getWeapon()instanceof RangedWeapon) {
                             ui.showMessage("You " + result.getWeapon().getAttackVerb() +
                                     " an arrow at the " + enemy.getShortName() + ".");
@@ -211,17 +212,17 @@ public class Adventure {
                         }
                         else {
                             ui.showMessage("You " + result.getWeapon().getAttackVerb() + " the " +
-                                    result.getWeapon().getAttackNoun() + " at the" + enemy.getShortName() + ".");
-
-                            ui.showMessage(result.getWeapon().getUsesLeftText());
-                            ui.showMessage("The " + enemy.getShortName() + " strikes back.");
+                                    result.getWeapon().getAttackNoun() + " at the " + enemy.getShortName() + ".");
                         }
+                        ui.showMessage(result.getWeapon().getUsesLeftText());
 
                         if (enemyDied) {
                             ui.showMessage("The enemy has been slain!");
                             ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
-                        } else {
+                        }
+                        else {
                             boolean enemyAttacked = enemy.attack(player);
+                            ui.showMessage("The " + enemy.getShortName() + " strikes back.");
                             if (!enemyAttacked) {
                                 ui.showMessage(enemy.getLongName() + " could not attack.");
                             }

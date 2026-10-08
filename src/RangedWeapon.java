@@ -20,11 +20,6 @@ public class RangedWeapon extends Weapon{
     }
 
     @Override
-    public String getAttackVerb() {
-        return "shoot";
-    }
-
-    @Override
     public String getUsesLeftText() {
      if (ammunition == 1) {
          return " 1 arrow left.";
