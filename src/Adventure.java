@@ -118,6 +118,7 @@ public class Adventure {
                             ui.showMessage("The mushroom tastes terrible and makes you feel sick.\n" +
                                     "A strange sensation spreads through your body.\n " +
                                     "You instantly regret eating the mushroom.");
+
                         }
                     }
                 }
