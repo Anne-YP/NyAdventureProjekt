@@ -72,13 +72,13 @@ public class Map {
         // Create weapons
         Weapon sword = new MeleeWeapon("sword", "a long sword", 20, "swing");
         Weapon archbow = new RangedWeapon("archbow", "a golden bejewelled archbow " +
-                "with arrows", 10, 5);
+                "with arrows", 10, 5, "shoot");
         Weapon bludgeon = new MeleeWeapon("bludgeon", "a dusty, knobbed bludgeon",
                 15, "smash");
         Weapon daggar = new MeleeWeapon("daggar", "a small but sharp daggar",
                 5, "stab");
         Weapon fire = new RangedWeapon("fire", "dragon spitting fire", 30,
-                3);
+                3, "spit");
 
         // Create enemies
          Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
