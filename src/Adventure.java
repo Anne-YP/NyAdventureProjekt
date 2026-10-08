@@ -29,6 +29,13 @@ public class Adventure {
                     ui.showMessage("You must eat the mushroom before you can reach the key.");
                     continue;
                 }
+                if (itemName.equalsIgnoreCase("book")) {
+                    Enemy orc = player.getCurrentRoom().findEnemy("orc");
+                    if (orc != null) {
+                        ui.showMessage("The orc is guarding the book.");
+                        continue;
+                    }
+                }
 
                 ui.showMessage("Searching for: [" + itemName + "]");
                 Item item = player.getCurrentRoom().findItem(itemName);
