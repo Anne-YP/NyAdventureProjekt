@@ -259,6 +259,7 @@ public class Adventure {
             ui.showMessage("You unlocked the trapdoor and escape!");
 
                 player.setCurrentRoom(map.getWinningRoom());
+                ui.showMessage(player.getCurrentRoom().getName());
                 ui.showMessage(player.getCurrentRoom().getDescription());
 
                 isPlaying = false;
