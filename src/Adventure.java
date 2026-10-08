@@ -180,7 +180,7 @@ public class Adventure {
                             + " is empty");
 
                     case SUCCESS -> ui.showMessage("You " + result.getWeapon().getAttackVerb() +
-                            " " + result.getWeapon().getShortName() + " at the empty air." +
+                            " the " + result.getWeapon().getShortName() + " at the empty air." +
                             result.getWeapon().getUsesLeftText());
                 }
                 continue;
@@ -204,13 +204,19 @@ public class Adventure {
 
                     case SUCCESS -> {
                         boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+                        if (result.getWeapon()instanceof RangedWeapon) {
+                            ui.showMessage("You " + result.getWeapon().getAttackVerb() +
+                                    " an arrow at the " + enemy.getShortName() + ".");
+                            // Bortset fra dragen som spits fire
+                        }
+                        else {
+                            ui.showMessage("You " + result.getWeapon().getAttackVerb() + " the " +
+                                    result.getWeapon().getAttackNoun() + " at the" + enemy.getShortName() + ".");
 
-                        //Lav en besked til melee og en til ranged
-                        ui.showMessage("You " + result.getWeapon().getAttackVerb() + " the " +
-                                result.getWeapon().getAttackNoun() + " at the" + enemy.getShortName() + ".");
-                        ui.showMessage(result.getWeapon().getUsesLeftText());
+                            ui.showMessage(result.getWeapon().getUsesLeftText());
+                            ui.showMessage("The " + enemy.getShortName() + " strikes back.");
+                        }
 
-                        ui.showMessage("The " + enemy.getShortName() + " strikes back.");
                         if (enemyDied) {
                             ui.showMessage("The enemy has been slain!");
                             ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
