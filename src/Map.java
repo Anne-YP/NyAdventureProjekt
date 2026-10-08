@@ -25,8 +25,8 @@ public class Map {
 
         Room r5 = new Room("You are in room 5",
                 "The air feels hot and humid. An intense smell of fire and soot\n" +
-                        "stings your nose. A dragon is guarding a treasure chest filled with gold.\n" +
-                        "Defeat the dragon to collect the gold and win the game!");
+                        "stings your nose. A dragon is guarding a trapdoor.\n" +
+                        "Defeat the dragon to get to the trapdoor and win the game!");
 
         Room r6 = new Room("you are in room 6",
                 "The relaxing sound of flowing water meets your ears.\n" +
@@ -47,13 +47,13 @@ public class Map {
                 "As you enter the room, you're hit buy the sound of\n" +
                         "classical music. Three fairies are playing a harp.\n");
 
+        Room r10 = new Room("The enemies of the labyrinth are defeated and you are still\n" +
+                "standing. You slayed the dragon, got through the trapdoor and escaped the labyrinth\n" +
+                "Congratulations!", "YOU WON THE GAME!");
+
         // Create items
         Item key = new Item("key", "a rusty key inside a pale glowing mushroom");
-        // Item sword = new Item("sword", "a long sword");
-        // Item bludgeon = new Item( "bludgeon", "a dusty, knobbed bludgeon");
         Item lamp = new Item("lamp", "an ancient oil lamp");
-        // Item archbow = new Item("archbow", "a golden bejewelled archbow with arrow");
-        Item gold = new Item("gold", "a treasure chest filled with gold");
         Item book = new Item("book", "a book: 'How to defeat a dragon'");
 
         // Create container
@@ -77,10 +77,14 @@ public class Map {
                 15);
         Weapon daggar = new MeleeWeapon("daggar", "a small but sharp daggar",
                 5);
+        Weapon fire = new RangedWeapon("fire", "dragon spitting fire", 30,
+                3);
 
         // Create enemies
          Enemy orc = new Enemy("orc", "An angry orc", "A nasty angry orc is " +
                  "charching at you.", 50, bludgeon, r4);
+         Enemy dragon = new Enemy("dragon", "A red dragon", "A gigant red " +
+                 "dragon is starring at you whilst spitting fire.", 90, fire, r5);
 
         // Assign items and food items to rooms + Water Source(true/false) + Sword Tree (true/false)
         r1.addItem(daggar);
@@ -94,7 +98,7 @@ public class Map {
         r4.addItem(book);
         r4.addEnemy(orc);
 
-        r5.addItem(gold);
+        r5.addEnemy(dragon);
 
         r6.addItem(archbow);
         r6.setWaterSource(true);
@@ -104,9 +108,9 @@ public class Map {
         r8.addItem(key);
         r8.addItem(mushroom);
 
-      //  r9.addItem(food);
         r9.addItem(bread);
         r9.setBreadCreature(true);
+
 
         // set directions for rooms
         r1.setEast(r2);
@@ -122,6 +126,7 @@ public class Map {
         r4.setSouth(r7);
 
         r5.setSouth(r8);
+        r5.setNorth(r10);
 
         r6.setNorth(r3);
         r6.setSouth(r9);
@@ -135,6 +140,8 @@ public class Map {
 
         r9.setWest(r8);
         r9.setNorth(r6);
+
+        r10.setSouth(r5);
 
         startingRoom = r1;
     }
