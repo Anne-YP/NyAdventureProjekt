@@ -45,8 +45,7 @@ public class Adventure {
 
                     ui.showMessage("You picked up " + item.getLongName());
                     continue;
-                }
-                else {
+                } else {
                     if (itemName.equals("water") && player.getCurrentRoom().hasWaterSource()) {
                         ui.showMessage("You need something to collect the water in first.");
                         continue;
@@ -118,7 +117,6 @@ public class Adventure {
                             ui.showMessage("The mushroom tastes terrible and makes you feel sick.\n" +
                                     "A strange sensation spreads through your body.\n " +
                                     "You instantly regret eating the mushroom.");
-
                         }
                     }
                 }
@@ -151,7 +149,7 @@ public class Adventure {
                 continue;
             }
 
-            if(command.startsWith("equip ")) {
+            if (command.startsWith("equip ")) {
                 String itemName = command.substring(6);
 
                 EquipOutcome outcome = player.equip(itemName);
@@ -166,67 +164,85 @@ public class Adventure {
                 continue;
             }
 
-                if(command.equals("attack")) {
-                    AttackOutcome result = player.attack();
+            if (command.equals("attack")) {
+                AttackOutcome result = player.attack();
 
-                    switch (result.getResult()) {
-                        case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped");
+                switch (result.getResult()) {
+                    case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped");
 
-                        case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getShortName()
-                         + " is empty");
+                    case WEAPON_EMPTY -> ui.showMessage("Your " + result.getWeapon().getShortName()
+                            + " is empty");
 
-                        case SUCCESS -> ui.showMessage("You " + result.getWeapon().getAttackVerb() +
-                                " " + result.getWeapon().getShortName() + " at the empty air." +
-                                result.getWeapon().getUsesLeftText());
-                    }
+                    case SUCCESS -> ui.showMessage("You " + result.getWeapon().getAttackVerb() +
+                            " " + result.getWeapon().getShortName() + " at the empty air." +
+                            result.getWeapon().getUsesLeftText());
+                }
+                continue;
+            }
+
+            if (command.startsWith("attack ")) {
+                String enemyName = command.substring(7);
+
+                Enemy enemy = player.getCurrentRoom().findEnemy(enemyName);
+                if (enemy == null) {
+                    ui.showMessage("Enemy not found.");
                     continue;
                 }
 
-                if (command.startsWith("attack ")) {
-                    String enemyName = command.substring(7);
+                AttackOutcome result = player.attack();
+                switch (result.getResult()) {
+                    case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped.");
 
-                    Enemy enemy = player.getCurrentRoom().findEnemy(enemyName);
-                    if (enemy == null) {
-                        ui.showMessage("Enemy not found.");
-                        continue;
-                    }
+                    case WEAPON_EMPTY -> ui.showMessage("You ran out of arrows and your " +
+                            result.getWeapon().getShortName() + " is empty.");
 
-                    AttackOutcome result = player.attack();
-                    switch(result.getResult()) {
-                        case NO_WEAPON_EQUIPPED -> ui.showMessage("You have no weapon equipped.");
+                    case SUCCESS -> {
+                        boolean enemyDied = enemy.hit(player.getEquippedWeapon());
+                        ui.showMessage("You " + result.getWeapon().getAttackVerb() + " an arrow at the " + enemy.getShortName() + ".");
+                        ui.showMessage(result.getWeapon().getUsesLeftText());
 
-                        case WEAPON_EMPTY -> ui.showMessage("You ran out of arrows and your " +
-                                result.getWeapon().getShortName() + " is empty.");
-
-                        case SUCCESS -> {
-                            boolean enemyDied = enemy.hit(player.getEquippedWeapon());
-                            ui.showMessage("You " + result.getWeapon().getAttackVerb() + " an arrow at the " + enemy.getShortName() + ".");
-                            ui.showMessage(result.getWeapon().getUsesLeftText());
-
-                            ui.showMessage("The " + enemy.getShortName() + " strikes back.");
-                            if (enemyDied) {
-                                ui.showMessage("The enemy has been slain!");
-                                ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
-                            } else {
-                                boolean enemyAttacked = enemy.attack(player);
-                                if (!enemyAttacked) {
-                                    ui.showMessage(enemy.getLongName() + " could not attack.");
-                                }
-                                if (player.getHealth() <= 0) {
-                                    ui.showMessage("You have died.");
-                                    ui.showMessage("GAME OVER!");
-
-                                    isPlaying = false;
-
-                                    continue;
-                                }
-                                ui.showMessage("Enemy health: " + enemy.getHealth());
-                                ui.showMessage("Player health: " + player.getHealth());
+                        ui.showMessage("The " + enemy.getShortName() + " strikes back.");
+                        if (enemyDied) {
+                            ui.showMessage("The enemy has been slain!");
+                            ui.showMessage(enemy.getWeapon().getLongName() + " drops to the ground.");
+                        } else {
+                            boolean enemyAttacked = enemy.attack(player);
+                            if (!enemyAttacked) {
+                                ui.showMessage(enemy.getLongName() + " could not attack.");
                             }
+                            if (player.getHealth() <= 0) {
+                                ui.showMessage("You have died.");
+                                ui.showMessage("GAME OVER!");
+
+                                isPlaying = false;
+
+                                continue;
+                            }
+                            ui.showMessage("Enemy health: " + enemy.getHealth());
+                            ui.showMessage("Player health: " + player.getHealth());
                         }
                     }
-                        continue;
-                    }
+                }
+                continue;
+            }
+
+            if (command.equalsIgnoreCase("open trapdoor")) {
+                if (!player.getCurrentRoom().hasTrapdoor()) {
+                    ui.showMessage("There is no trapdoor here.");
+                    continue;
+                }
+                if (player.findItem("key") == null) {
+                    ui.showMessage("You tried to open the trapdoor but it is locked.");
+                continue;
+            }
+                Enemy dragon = player.getCurrentRoom().findEnemy("dragon");
+                if (dragon != null) {
+                    ui.showMessage("The dragon blocks your way.");
+                    continue;
+                }
+            ui.showMessage("You unlocked the trapdoor");
+            continue;
+        }
 
                 switch (command) {
                     case "look":

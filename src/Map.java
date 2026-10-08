@@ -99,6 +99,7 @@ public class Map {
         r4.addEnemy(orc);
 
         r5.addEnemy(dragon);
+        r5.setTrapdoor(true);
 
         r6.addItem(archbow);
         r6.setWaterSource(true);

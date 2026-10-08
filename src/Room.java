@@ -10,6 +10,7 @@ public class Room {
     private boolean hasBreadCreature;
     private boolean breadTaken;
     private boolean mushroomEaten;
+    private boolean hasTrapdoor;
 
     private Room north;
     private Room south;
@@ -20,7 +21,7 @@ public class Room {
 
     private ArrayList<Enemy> enemies;
 
-    public Room (String name, String description) {
+    public Room(String name, String description) {
         this.name = name;
         this.description = description;
         waterSource = false;
@@ -48,8 +49,8 @@ public class Room {
     }
 
     public Item findItem(String shortName) {
-        for(Item item: items) {
-            if(item.getShortName().equalsIgnoreCase(shortName)) {
+        for (Item item : items) {
+            if (item.getShortName().equalsIgnoreCase(shortName)) {
                 return item;
             }
         }
@@ -59,7 +60,8 @@ public class Room {
     public String getName() {
         return name;
     }
-    public String getDescription(){
+
+    public String getDescription() {
         String text = description;
 
         if (hasSwordTree && !swordTaken) {
@@ -69,10 +71,12 @@ public class Room {
         if (hasBreadCreature) {
             if (!breadTaken) {
                 text += " A mythical creature is offering you bread.";
-            }
-            else {
+            } else {
                 text += " A mythical creature is in front of you.";
             }
+        }
+        if (hasTrapdoor) {
+            text += "\nA heavy trapdoor is set into the dusty floor.";
         }
         return text;
     }
@@ -82,8 +86,8 @@ public class Room {
     }
 
     public Enemy findEnemy(String enemyName) {
-        for(Enemy enemy: enemies) {
-            if(enemy.getShortName().equalsIgnoreCase(enemyName)) {
+        for (Enemy enemy : enemies) {
+            if (enemy.getShortName().equalsIgnoreCase(enemyName)) {
                 return enemy;
             }
         }
@@ -102,12 +106,15 @@ public class Room {
     public Room getNorth() {
         return north;
     }
+
     public Room getSouth() {
         return south;
     }
+
     public Room getEast() {
         return east;
     }
+
     public Room getWest() {
         return west;
     }
@@ -116,12 +123,15 @@ public class Room {
     public void setNorth(Room north) {
         this.north = north;
     }
+
     public void setSouth(Room south) {
         this.south = south;
     }
+
     public void setEast(Room east) {
         this.east = east;
     }
+
     public void setWest(Room west) {
         this.west = west;
     }
@@ -130,6 +140,7 @@ public class Room {
     public boolean hasWaterSource() {
         return waterSource;
     }
+
     public void setWaterSource(boolean waterSource) {
         this.waterSource = waterSource;
     }
@@ -138,6 +149,7 @@ public class Room {
     public boolean isSwordTaken() {
         return swordTaken;
     }
+
     public void setSwordTaken(boolean swordTaken) {
         this.swordTaken = swordTaken;
     }
@@ -146,6 +158,7 @@ public class Room {
     public boolean hasSwordTree() {
         return hasSwordTree;
     }
+
     public void setSwordTree(boolean hasSwordTree) {
         this.hasSwordTree = hasSwordTree;
     }
@@ -154,9 +167,11 @@ public class Room {
     public boolean hasBreadCreature() {
         return hasBreadCreature;
     }
+
     public void setBreadCreature(boolean hasBreadCreature) {
         this.hasBreadCreature = hasBreadCreature;
     }
+
     public boolean isBreadTaken() {
         return breadTaken;
     }
@@ -173,5 +188,13 @@ public class Room {
     public void setMushroomEaten(boolean mushroomEaten) {
         this.mushroomEaten = mushroomEaten;
     }
-}
 
+    //Getter and Setter for hasTrapdoor
+    public boolean hasTrapdoor() {
+        return hasTrapdoor;
+    }
+
+    public void setTrapdoor(boolean hasTrapdoor) {
+        this.hasTrapdoor = hasTrapdoor;
+    }
+}
