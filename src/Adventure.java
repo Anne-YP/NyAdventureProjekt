@@ -256,8 +256,14 @@ public class Adventure {
                     ui.showMessage("The dragon blocks your way.");
                     continue;
                 }
-            ui.showMessage("You unlocked the trapdoor");
-            continue;
+            ui.showMessage("You unlocked the trapdoor and escape!");
+
+                player.setCurrentRoom(map.getWinningRoom());
+                ui.showMessage(player.getCurrentRoom().getDescription());
+
+                isPlaying = false;
+
+                continue;
         }
 
                 switch (command) {

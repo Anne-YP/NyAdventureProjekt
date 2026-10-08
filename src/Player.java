@@ -16,6 +16,9 @@ public class Player {
     public Room getCurrentRoom() {
         return currentRoom;
     }
+    public void setCurrentRoom(Room room) {
+        currentRoom = room;
+    }
 
     public boolean move(String direction) {
 

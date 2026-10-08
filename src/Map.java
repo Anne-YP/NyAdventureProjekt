@@ -2,6 +2,7 @@ public class Map {
 
     private Room startingRoom;
     private Liquid water;
+    private Room winningRoom;
 
     public Map() {
         // Create rooms
@@ -47,7 +48,7 @@ public class Map {
                 "As you enter the room, you're hit buy the sound of\n" +
                         "classical music. Three fairies are playing a harp.\n");
 
-        Room r10 = new Room("The enemies of the labyrinth are defeated and you are still\n" +
+        winningRoom = new Room("The enemies of the labyrinth are defeated and you are still\n" +
                 "standing. You slayed the dragon, got through the trapdoor and escaped the labyrinth\n" +
                 "Congratulations!", "YOU WON THE GAME!");
 
@@ -127,7 +128,7 @@ public class Map {
         r4.setSouth(r7);
 
         r5.setSouth(r8);
-        r5.setNorth(r10);
+        r5.setNorth(winningRoom);
 
         r6.setNorth(r3);
         r6.setSouth(r9);
@@ -142,13 +143,17 @@ public class Map {
         r9.setWest(r8);
         r9.setNorth(r6);
 
-        r10.setSouth(r5);
+        winningRoom.setSouth(r5);
 
         startingRoom = r1;
     }
 
     public Room getStartingRoom() {
         return startingRoom;
+    }
+
+    public Room getWinningRoom() {
+        return winningRoom;
     }
 
     public Liquid getWater(){
